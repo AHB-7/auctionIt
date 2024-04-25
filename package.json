@@ -1,0 +1,15 @@
+{
+  "name": "auctionit",
+  "version": "1.0.0",
+  "description": "Auction site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "site",
+    "auction"
+  ],
+  "author": "AlanB",
+  "license": "ISC"
+}
