@@ -4,12 +4,27 @@
   "description": "Auction site.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write 'src/**/*.{js,jsx,scss,html,css}'",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css",
+    "dev": "npm run watch && live-server"
   },
   "keywords": [
     "site",
     "auction"
   ],
   "author": "AlanB",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "eslint": "^9.1.1",
+    "globals": "^15.0.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.75.0"
+  }
 }
