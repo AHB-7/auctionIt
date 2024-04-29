@@ -10187,72 +10187,8 @@ textarea.form-control-lg {
   color: #000;
 }
 
-.underLine {
-  width: 9rem;
-  height: 0.2rem;
-  background-color: #7c5ac3;
-  position: absolute;
-  margin-bottom: 0.4rem;
-}
-
-.fav-btn {
-  position: absolute;
-  top: 0.3rem;
-  right: 0.8rem;
-  background-color: #7c5ac3;
-  width: 2.4rem;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  opacity: 0.8;
-  transition: 0.3s;
-}
-.fav-btn:hover {
-  opacity: 1;
-}
-.fav-btn > :only-child {
-  opacity: 0.8;
-  color: #fff;
-  transition: 0.3s;
-}
-.fav-btn > :only-child:hover {
-  color: #fff;
-  opacity: 1;
-}
-.fav-btn > :only-child:active {
-  color: #57d254;
-}
-
-.btn-w-cotroler {
-  display: block;
-  max-width: 20rem;
-  text-align: center;
-  background-color: #7c5ac3;
-  border: 1px solid red;
-}
-
-.discrption-container {
-  width: 100%;
-  max-width: 40rem;
-  border-radius: 0 0 0.7rem 0.7rem;
-  backdrop-filter: saturate(140%) blur(5px);
-  height: 4rem;
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 .bg-pbrand {
   background-color: #7c5ac3;
-}
-.bg-brand-bk {
-  background-color: #202020;
-}
-
-.text-pbrand {
-  color: #7c5ac3;
 }
 
 .fs-h1 {
@@ -10267,12 +10203,9 @@ textarea.form-control-lg {
 .fs-h4 {
   font-size: 1.1rem;
 }
-.fs-small {
-  font-size: 0.8rem;
-}
 
 * {
-  font-family: Roboto, "Noto Sans", Arial, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .shadow-dark {
