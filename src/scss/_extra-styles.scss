@@ -1,0 +1,46 @@
+.underLine {
+    width: 9rem;
+    height: 0.2rem;
+    background-color: $pbrand;
+    position: absolute;
+    margin-bottom: 0.4rem;
+}
+.fav-btn {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.8rem;
+    background-color: $pbrand;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: 0.3s;
+    &:hover {
+        opacity: 1;
+    }
+    & > :only-child {
+        opacity: 0.8;
+        color: $white;
+        transition: 0.3s;
+    }
+    & > :only-child:hover {
+        color: $white;
+        opacity: 1;
+    }
+    & > :only-child:active {
+        color: $sbrand;
+    }
+}
+.discrption-container {
+    width: 100%;
+    max-width: 40rem;
+    border-radius: 0 0 0.7rem 0.7rem;
+    backdrop-filter: saturate(140%) blur(5px);
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}

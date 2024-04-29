@@ -3,6 +3,11 @@
         background-color: $pbrand;
     }
 }
+.text {
+    &-pbrand {
+        color: $pbrand;
+    }
+}
 .fs {
     &-h1 {
         font-size: 1.6rem;
@@ -13,10 +18,22 @@
     &-h3 {
         font-size: 1.2rem;
     }
+    &-h4 {
+        font-size: 1.1rem;
+    }
+    &-small {
+        font-size: 0.8rem;
+    }
 }
+
+* {
+    font-family: $font-family-sans-serif;
+} //btn
 .shadow {
     &-dark {
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+        border: 2px solid $pbrand;
+
         &:hover {
             box-shadow: none;
             transition: 0.1s;
@@ -25,3 +42,20 @@
         }
     }
 }
+.container {
+    max-width: 1000px;
+}
+// test
+// .carousel-control-prev {
+//     position: relative;
+//     margin-right: 2.5rem;
+//     z-index: 1001;
+//     width: fit-content;
+// }
+
+// .carousel-control-next {
+//     position: relative;
+//     margin-left: 2.5rem;
+//     z-index: 1001;
+//     width: fit-content;
+// }
