@@ -33,7 +33,9 @@
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
-                                <a href=",/index.html" class="nav-link">Home</a>
+                                <a href="../index.html" class="nav-link"
+                                    >Home</a
+                                >
                             </li>
                             <li class="nav-item">
                                 <a
@@ -60,7 +62,7 @@
                         style="right: 0"
                     >
                         <a
-                            href="./html/registering.html"
+                            href="./registering.html"
                             class="bi bi-box-arrow-in-right fs-4"
                             data-bs-toggle="tooltip"
                             data-bs-placement="left"
@@ -71,12 +73,39 @@
             </nav>
         </header>
         <main>
-            <section class="container my-5 text-center">
+            <section
+                class="container my-4 text-center"
+                style="width: 100%; max-width: 25rem"
+            >
+                <div class="position-relative">
+                    <label for="datalist" class="form-label"
+                        >Datalist example</label
+                    >
+                    <input
+                        class="form-control"
+                        list="datalistOptions"
+                        id="datalist"
+                        placeholder="Type to search..."
+                    />
+                    <datalist id="datalistOptions ">
+                        <option value="Art"></option>
+                        <option value="Animal"></option>
+                        <option value="Seattle"></option>
+                        <option value="Los Angeles"></option>
+                        <option value="Chicago"></option>
+                    </datalist>
+                    <a
+                        href=""
+                        class="position-absolute"
+                        style="right: 0.5rem; top: 2rem"
+                    >
+                        <i class="bi bi-search-heart fs-5"></i>
+                    </a>
+                </div>
                 <div
-                    class="btn-group mt-5"
+                    class="btn-group mt-2 w-100"
                     role="group"
                     aria-label="Basic example"
-                    style="width: 100%; max-width: 25rem"
                 >
                     <input
                         type="checkbox"
@@ -128,7 +157,9 @@
                         id="sort"
                         autocomplete="off"
                     />
-                    <label class="btn btn-outline-primary" for="sort"
+                    <label
+                        class="btn btn-outline-primary rounded-end-2"
+                        for="sort"
                         >Sort</label
                     >
                     <div
@@ -164,70 +195,202 @@
                     </div>
                 </div>
             </section>
-            <div
-                class="container d-flex justify-content-center flex-md-wrap flex-wrap"
-            >
-                <div class="item-container m-2">
-                    <a href="" class="item-linking">
-                        <img
-                            src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                            alt=""
-                            class="item-img"
-                        />
-                    </a>
-                    <div class="item-fav-btn">
-                        <a
-                            href=""
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="left"
-                            data-bs-title="add to you watch list"
-                            ><i class="bi fs-5 bi-plus-square"></i
-                        ></a>
-                    </div>
-                    <div class="item-info">
-                        <div
-                            class="d-flex align-items-center justify-content-between px-1 px-sm-3"
-                            style="height: 3.5rem"
-                        >
-                            <div>
-                                <p class="m-0 lh-sm">Item Name</p>
-                                <p class="m-0 lh-sm">
-                                    Floor Price: 40
-                                    <strong class="text-pbrand">CR</strong>
-                                </p>
+            <section class="container">
+                <div class="d-flex justify-content-center flex-wrap">
+                    <div class="item-container m-2">
+                        <a href="" class="item-linking">
+                            <img
+                                src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                                alt=""
+                                class="item-img"
+                            />
+                        </a>
+                        <div class="item-fav-btn">
+                            <a
+                                href=""
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="add to you watch list"
+                                ><i class="bi fs-5 bi-plus-square"></i
+                            ></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-inner">
+                                <div>
+                                    <p class="m-0 lh-sm">Item Name</p>
+                                    <p class="m-0 lh-sm">
+                                        Floor Price: 40
+                                        <strong class="text-pbrand">CR</strong>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <a
+                                        href="./html/infopage.html"
+                                        class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-sm-block"
+                                        style="width: fit-content"
+                                        >Red More</a
+                                    >
+                                </div>
                             </div>
-                            <div class="">
-                                <a
-                                    href="./html/infopage.html"
-                                    class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto"
-                                    style="width: fit-content"
-                                    >Red More</a
-                                >
+                        </div>
+                    </div>
+                    <div class="item-container m-2">
+                        <a href="" class="item-linking">
+                            <img
+                                src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                                alt=""
+                                class="item-img"
+                            />
+                        </a>
+                        <div class="item-fav-btn">
+                            <a
+                                href=""
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="add to you watch list"
+                                ><i class="bi fs-5 bi-plus-square"></i
+                            ></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-inner">
+                                <div>
+                                    <p class="m-0 lh-sm">Item Name</p>
+                                    <p class="m-0 lh-sm">
+                                        Floor Price: 40
+                                        <strong class="text-pbrand">CR</strong>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <a
+                                        href="./html/infopage.html"
+                                        class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-sm-block"
+                                        style="width: fit-content"
+                                        >Red More</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-container m-2">
+                        <a href="" class="item-linking">
+                            <img
+                                src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                                alt=""
+                                class="item-img"
+                            />
+                        </a>
+                        <div class="item-fav-btn">
+                            <a
+                                href=""
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="add to you watch list"
+                                ><i class="bi fs-5 bi-plus-square"></i
+                            ></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-inner">
+                                <div>
+                                    <p class="m-0 lh-sm">Item Name</p>
+                                    <p class="m-0 lh-sm">
+                                        Floor Price: 40
+                                        <strong class="text-pbrand">CR</strong>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <a
+                                        href="./html/infopage.html"
+                                        class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-sm-block"
+                                        style="width: fit-content"
+                                        >Red More</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-container m-2">
+                        <a href="" class="item-linking">
+                            <img
+                                src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                                alt=""
+                                class="item-img"
+                            />
+                        </a>
+                        <div class="item-fav-btn">
+                            <a
+                                href=""
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="add to you watch list"
+                                ><i class="bi fs-5 bi-plus-square"></i
+                            ></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-inner">
+                                <div>
+                                    <p class="m-0 lh-sm">Item Name</p>
+                                    <p class="m-0 lh-sm">
+                                        Floor Price: 40
+                                        <strong class="text-pbrand">CR</strong>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <a
+                                        href="./html/infopage.html"
+                                        class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-sm-block"
+                                        style="width: fit-content"
+                                        >Red More</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-container m-2">
+                        <a href="" class="item-linking">
+                            <img
+                                src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                                alt=""
+                                class="item-img"
+                            />
+                        </a>
+                        <div class="item-fav-btn">
+                            <a
+                                href=""
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                data-bs-title="add to you watch list"
+                                ><i class="bi fs-5 bi-plus-square"></i
+                            ></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-inner">
+                                <div>
+                                    <p class="m-0 lh-sm">Item Name</p>
+                                    <p class="m-0 lh-sm">
+                                        Floor Price: 40
+                                        <strong class="text-pbrand">CR</strong>
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <a
+                                        href="./html/infopage.html"
+                                        class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-sm-block"
+                                        style="width: fit-content"
+                                        >Red More</a
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item-container m-2">
-                    <img
-                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                        alt=""
-                        class="item-img"
-                    />
-                </div>
-                <div class="item-container m-2">
-                    <img
-                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                        alt=""
-                        class="item-img"
-                    />
-                </div>
-            </div>
+            </section>
+
             <section class="container my-5 px-3">
                 <a
                     href="./html/auctions.html"
                     class="bg-pbrand py-1 btn-w-cotroler rounded-1 shadow-dark mx-auto w-100"
                     style="width: fit-content"
-                    >Show All</a
+                    >Show More</a
                 >
             </section>
         </main>

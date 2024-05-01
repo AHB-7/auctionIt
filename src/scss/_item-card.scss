@@ -2,9 +2,8 @@
     &-container {
         aspect-ratio: 1/1;
         width: 100%;
-        max-width: 18rem;
+        max-width: 17rem;
         height: 100%;
-        max-height: 30rem;
         border-radius: 0.7rem;
         position: relative;
         display: flex;
@@ -32,6 +31,13 @@
         backdrop-filter: saturate(140%) blur(5px);
         background-color: rgba(0, 0, 0, 0.7);
         align-self: center;
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0.3rem;
+        }
     }
     &-fav-btn {
         aspect-ratio: 1/1;
@@ -49,6 +55,17 @@
         margin: 0.3rem;
         &:hover {
             opacity: 100%;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .item {
+        &-container {
+            max-width: 8rem;
+        }
+        &-info {
+            font-size: 0.7rem;
+            height: 2.4rem;
         }
     }
 }
