@@ -158,7 +158,7 @@
         margin-left: $carousel-indicator-spacer;
         text-indent: -999px;
         cursor: pointer;
-        background-color: $pbrand;
+        background-color: $primary;
         background-clip: padding-box;
         border: 0;
         // Use transparent borders to increase the hit area by 10px on top and bottom.
@@ -197,7 +197,7 @@
     }
 
     .carousel-indicators [data-bs-target] {
-        background-color: $pbrand;
+        background-color: $primary;
     }
 
     .carousel-caption {

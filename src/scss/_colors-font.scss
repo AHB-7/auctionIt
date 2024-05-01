@@ -1,10 +1,10 @@
-body{
+body {
     padding: 0;
     margin: 0;
 }
 .bg {
     &-pbrand {
-        background-color: $pbrand;
+        background-color: $primary;
     }
     &-brand-bk {
         background-color: $brand-bk;
@@ -12,7 +12,7 @@ body{
 }
 .text {
     &-pbrand {
-        color: $pbrand;
+        color: $primary;
     }
 }
 .fs {
@@ -39,13 +39,13 @@ body{
 .shadow {
     &-dark {
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
-        border: 2px solid $pbrand;
+        border: 2px solid $primary;
 
         &:hover {
             box-shadow: none;
             transition: 0.1s;
             background-color: transparent;
-            border: 2px solid $pbrand;
+            border: 2px solid $primary;
         }
     }
 }

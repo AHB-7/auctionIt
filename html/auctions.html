@@ -71,10 +71,161 @@
             </nav>
         </header>
         <main>
+            <section class="container my-5 text-center">
+                <div
+                    class="btn-group mt-5"
+                    role="group"
+                    aria-label="Basic example"
+                    style="width: 100%; max-width: 25rem"
+                >
+                    <input
+                        type="checkbox"
+                        class="btn-check"
+                        name="options-outlined"
+                        id="filter"
+                        autocomplete="off"
+                    />
+                    <label
+                        class="btn btn-outline-primary position-relative"
+                        for="filter"
+                        >Filter</label
+                    >
+                    <div
+                        class="position-absolute top-100 bg-dark w-100 filter-container d-none py-3 px-3 z-3"
+                        style="left: 0"
+                    >
+                        <div class="form-check d-flex gap-1 py-1">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="art"
+                            />
+                            <label class="form-check-label" for="art">
+                                Art
+                            </label>
+                        </div>
+                        <div class="form-check d-flex gap-1 py-1">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                                checked
+                            />
+                            <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                            >
+                                Checked checkbox
+                            </label>
+                        </div>
+                    </div>
+                    <input
+                        type="checkbox"
+                        class="btn-check"
+                        name="options-outlined"
+                        id="sort"
+                        autocomplete="off"
+                    />
+                    <label class="btn btn-outline-primary" for="sort"
+                        >Sort</label
+                    >
+                    <div
+                        class="position-absolute top-100 bg-dark w-100 sort-container d-none py-3 px-3 z-3"
+                        style="left: 0"
+                    >
+                        <div class="form-check d-flex gap-1 py-1">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="art"
+                            />
+                            <label class="form-check-label" for="art">
+                                Art
+                            </label>
+                        </div>
+                        <div class="form-check d-flex gap-1 py-1">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                                checked
+                            />
+                            <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                            >
+                                Checked checkbox
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div
+                class="container d-flex justify-content-center flex-md-wrap flex-wrap"
+            >
+                <div class="item-container m-2">
+                    <a href="" class="item-linking">
+                        <img
+                            src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                            alt=""
+                            class="item-img"
+                        />
+                    </a>
+                    <div class="item-fav-btn">
+                        <a
+                            href=""
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="left"
+                            data-bs-title="add to you watch list"
+                            ><i class="bi fs-5 bi-plus-square"></i
+                        ></a>
+                    </div>
+                    <div class="item-info">
+                        <div
+                            class="d-flex align-items-center justify-content-between px-1 px-sm-3"
+                            style="height: 3.5rem"
+                        >
+                            <div>
+                                <p class="m-0 lh-sm">Item Name</p>
+                                <p class="m-0 lh-sm">
+                                    Floor Price: 40
+                                    <strong class="text-pbrand">CR</strong>
+                                </p>
+                            </div>
+                            <div class="">
+                                <a
+                                    href="./html/infopage.html"
+                                    class="bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto"
+                                    style="width: fit-content"
+                                    >Red More</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container m-2">
+                    <img
+                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                        alt=""
+                        class="item-img"
+                    />
+                </div>
+                <div class="item-container m-2">
+                    <img
+                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                        alt=""
+                        class="item-img"
+                    />
+                </div>
+            </div>
             <section class="container my-5 px-3">
                 <a
                     href="./html/auctions.html"
-                    class="bg-pbrand py-2 btn-w-cotroler rounded-1 shadow-dark mx-auto w-100"
+                    class="bg-pbrand py-1 btn-w-cotroler rounded-1 shadow-dark mx-auto w-100"
                     style="width: fit-content"
                     >Show All</a
                 >

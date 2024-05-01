@@ -1,7 +1,7 @@
 .underLine {
     width: 9rem;
     height: 0.2rem;
-    background-color: $pbrand;
+    background-color: $primary;
     position: absolute;
     margin-bottom: 0.4rem;
 }
@@ -9,7 +9,7 @@
     position: absolute;
     top: 0.3rem;
     right: 0.8rem;
-    background-color: $pbrand;
+    background-color: $primary;
     width: 2.4rem;
     height: 2.4rem;
     display: flex;
@@ -34,12 +34,16 @@
         color: $sbrand;
     }
 }
+.btn-outline {
+    &pbrand {
+        border-color: $primary;
+    }
+}
 .btn-w-cotroler {
     display: block;
     max-width: 25rem;
     text-align: center;
-    background-color: $pbrand;
-    border: 1px solid red;
+    background-color: $primary;
 }
 
 // @media (max-width: 400px) {
