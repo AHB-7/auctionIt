@@ -96,7 +96,7 @@
     text-align: center;
     background: none;
     border: 0;
-    z-index: 1001;
+    z-index: 0;
     opacity: $carousel-control-opacity;
     @include transition($carousel-control-transition);
 
@@ -135,17 +135,17 @@
 // like a button) with data-bs-target for each slide your carousel holds.
 
 .carousel-indicators {
-    position: absolute;
+    position: relative;
     right: 0;
-    bottom: 0;
+    bottom: 2.2rem;
     left: 0;
-    z-index: 2;
+    z-index: -1;
     display: flex;
     justify-content: center;
     padding: 0;
     // Use the .carousel-control's width as margin so we don't overlay those
     margin-right: $carousel-control-width;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     margin-left: $carousel-control-width;
 
     [data-bs-target] {

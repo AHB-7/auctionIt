@@ -10008,6 +10008,10 @@ textarea.form-control-lg {
   flex-direction: column;
   justify-content: space-between;
 }
+.item-lg-container {
+  max-width: 40rem;
+  height: 100%;
+}
 .item-linking {
   width: 100%;
   height: 100%;
@@ -10056,20 +10060,34 @@ textarea.form-control-lg {
   opacity: 100%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
   .item-container {
     width: 45%;
+  }
+  .item-lg-container {
+    width: 100%;
+    height: 100%;
   }
   .item-info {
     font-size: 0.7rem;
     height: 2.4rem;
   }
+  .item-lg-info {
+    font-size: 1rem;
+    height: 3rem;
+  }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 370px) {
   .item-container {
     width: 100%;
   }
 }
+.carousel-container {
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 35rem;
+}
+
 .carousel {
   position: relative;
 }
@@ -10157,7 +10175,7 @@ textarea.form-control-lg {
   text-align: center;
   background: none;
   border: 0;
-  z-index: 1001;
+  z-index: 0;
   opacity: 0.5;
   transition: opacity 0.15s ease;
 }
@@ -10187,16 +10205,16 @@ textarea.form-control-lg {
 }
 
 .carousel-indicators {
-  position: absolute;
+  position: relative;
   right: 0;
-  bottom: 0;
+  bottom: 2.2rem;
   left: 0;
-  z-index: 2;
+  z-index: -1;
   display: flex;
   justify-content: center;
   padding: 0;
   margin-right: 15%;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   margin-left: 15%;
 }
 .carousel-indicators [data-bs-target] {
@@ -10369,6 +10387,11 @@ body {
 
 .container {
   max-width: 1000px;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
 }
 
 /*# sourceMappingURL=index.css.map */
