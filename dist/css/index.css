@@ -10058,11 +10058,16 @@ textarea.form-control-lg {
 
 @media screen and (max-width: 450px) {
   .item-container {
-    max-width: 8rem;
+    width: 45%;
   }
   .item-info {
     font-size: 0.7rem;
     height: 2.4rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .item-container {
+    width: 100%;
   }
 }
 .carousel {
