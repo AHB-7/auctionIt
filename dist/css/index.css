@@ -10351,9 +10351,18 @@ body {
   max-width: 1000px;
 }
 
-.scroll-hide::-webkit-scrollbar {
-  display: none;
-  scrollbar-width: none;
+*::-webkit-scrollbar {
+  background-color: #5b5b5b;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #adb5bd;
+  border-radius: 1rem;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #6c757d;
 }
 
 /*# sourceMappingURL=index.css.map */
