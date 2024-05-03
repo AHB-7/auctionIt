@@ -10328,6 +10328,9 @@ body {
 .fs-small {
   font-size: 0.8rem;
 }
+.fs-xs {
+  font-size: 0.7rem;
+}
 
 * {
   font-family: Roboto, "Noto Sans", Arial, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

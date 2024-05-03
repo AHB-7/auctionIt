@@ -1,9 +1,3 @@
-const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-)
-const tooltipList = [...tooltipTriggerList].map(
-    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-)
 // Filter
 const filterEl = document.querySelector('#filter')
 const sortEl = document.querySelector('#sort')
@@ -29,7 +23,6 @@ function toggleSort() {
 filterEl.addEventListener('click', toggleFilter)
 sortEl.addEventListener('click', toggleSort)
 
-// Hide filter or sort container when clicking outside
 document.addEventListener(
     'click',
     function (event) {
@@ -49,4 +42,6 @@ document.addEventListener(
         }
     },
     true
-) // Use capture phase to ensure this runs before other click events
+)
+
+////// SignIn SignUp
