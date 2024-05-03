@@ -13,7 +13,7 @@
     <body data-bs-theme="dark">
         <header>
             <nav class="navbar navbar-expand-sm z-3">
-                <div class="container position-relative">
+                <div class="container position-relative z-3">
                     <a
                         class="navbar-toggler text-white border-0 ps-1"
                         type="button"
@@ -26,8 +26,8 @@
                         <span class="bi bi-list fs-1"></span>
                     </a>
                     <div
-                        class="collapse navbar-collapse ps-2 pb-3 py-sm-0 ms-0 ms-sm-3 position-absolute top-0 mt-5 mt-sm-0 bg-brand-bk w-100"
-                        style="left: 0; max-width: 30rem"
+                        class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
+                        style="left: 0"
                         id="navbarNav"
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
@@ -37,9 +37,7 @@
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    href="./auctions.html"
-                                    class="nav-link text-pbrand"
+                                <a href="./auctions.html" class="nav-link"
                                     >Auctions</a
                                 >
                             </li>
@@ -56,18 +54,14 @@
                             </li>
                         </ul>
                     </div>
-                    <div
-                        class="position-absolute top-0 pe-4 pt-0"
-                        style="right: 0"
-                    >
+                    <div class="position-absolute top-0 me-3" style="right: 0">
                         <a
                             href="./registering.html"
-                            class="bi bi-box-arrow-in-right fs-4"
+                            class="bi bi-box-arrow-in-right fs-4 text-pbrand"
                             data-bs-toggle="tooltip"
                             data-bs-placement="left"
                             data-bs-title="Login"
-                        >
-                        </a>
+                        ></a>
                     </div>
                 </div>
             </nav>
