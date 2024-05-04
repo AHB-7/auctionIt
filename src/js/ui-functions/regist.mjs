@@ -1,7 +1,4 @@
-const signUp = document.querySelector('#signUp')
-const signIn = document.querySelector('#signIn')
-const signUpForm = document.querySelector('#signUpForm')
-const signInForm = document.querySelector('#signInForm')
+import { signIn, signInForm, signUp, signUpForm } from '../global/variables.mjs'
 
 signIn.addEventListener('click', function () {
     if (signInForm.classList.contains('d-none')) {

@@ -1,8 +1,9 @@
-// Filter
-const filterEl = document.querySelector('#filter')
-const sortEl = document.querySelector('#sort')
-const filterContainer = document.querySelector('.filter-container')
-const sortContainer = document.querySelector('.sort-container')
+import {
+    filterContainer,
+    filterEl,
+    sortContainer,
+    sortEl,
+} from '../global/variables.mjs'
 
 function toggleFilter() {
     if (filterEl.checked) {
@@ -11,7 +12,6 @@ function toggleFilter() {
         filterContainer.classList.add('d-none')
     }
 }
-
 function toggleSort() {
     if (sortEl.checked) {
         sortContainer.classList.remove('d-none')
@@ -43,5 +43,3 @@ document.addEventListener(
     },
     true
 )
-
-////// SignIn SignUp

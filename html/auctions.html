@@ -4,12 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home</title>
-        <link rel="stylesheet" href="dist/css/index.css" />
         <link
             rel="stylesheet"
             href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
         <link rel="stylesheet" href="../dist/css/index.css" />
+        <script type="module" src="../src/js/index.mjs"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
@@ -93,6 +93,9 @@
                         href=""
                         class="position-absolute"
                         style="right: 0.5rem; top: 1.7rem"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="start searching"
                     >
                         <i class="bi bi-search-heart fs-5"></i>
                     </a>
@@ -112,6 +115,9 @@
                     <label
                         class="btn btn-outline-primary position-relative"
                         for="filter"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-title="Click here to filter the auctions..."
                         >Filter</label
                     >
                     <div
@@ -155,6 +161,9 @@
                     <label
                         class="btn btn-outline-primary rounded-end-2"
                         for="sort"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-title="Click here to choose the sorting method..."
                         >Sort</label
                     >
                     <div
@@ -198,6 +207,9 @@
                                 src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
                                 alt=""
                                 class="item-img"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-title="Click here to filter the auctions..."
                             />
                         </a>
                         <div class="item-fav-btn">
@@ -385,11 +397,13 @@
                     href="./html/auctions.html"
                     class="bg-pbrand py-1 btn-w-cotroler rounded-1 shadow-dark mx-auto w-100"
                     style="width: fit-content"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Click to browse more auctions"
                     >Show More</a
                 >
             </section>
         </main>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="../src/js/index.js"></script>
     </body>
 </html>

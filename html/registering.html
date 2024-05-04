@@ -9,6 +9,7 @@
             href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
         <link rel="stylesheet" href="../dist/css/index.css" />
+        <script type="module" src="../src/js/index.mjs"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
@@ -112,6 +113,7 @@
                                     <input
                                         type="email"
                                         class="form-control"
+                                        autocomplete="email"
                                         id="email"
                                         required
                                     />
@@ -122,7 +124,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <label for="password" class="form-label"
+                                    <label for="password-2" class="form-label"
                                         >Password
                                         <spam
                                             data-bs-toggle="tooltip"
@@ -135,8 +137,9 @@
                                     <input
                                         type="password"
                                         class="form-control"
-                                        id="password"
+                                        id="password-2"
                                         minlength="8"
+                                        autocomplete="current-password"
                                         required
                                     />
                                     <div class="invalid-feedback">
@@ -172,7 +175,7 @@
                     >
                         <h1 class="my-3 col-12">Sign Up</h1>
                         <form
-                            id="loginForm"
+                            id="SignUpform"
                             class="needs-validation text-start"
                             novalidate
                         >
@@ -192,6 +195,7 @@
                                         type="text"
                                         class="form-control"
                                         id="username"
+                                        autocomplete="username"
                                         min="6"
                                         required
                                     />
@@ -210,7 +214,9 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <label for="email" class="form-label w-100"
+                                    <label
+                                        for="email-2"
+                                        class="form-label w-100"
                                         >Email
                                         <spam
                                             data-bs-toggle="tooltip"
@@ -224,7 +230,7 @@
                                     <input
                                         type="email"
                                         class="form-control"
-                                        id="email"
+                                        id="email-2"
                                         required
                                     />
                                     <div class="invalid-feedback">
@@ -249,6 +255,7 @@
                                         class="form-control"
                                         id="password"
                                         minlength="8"
+                                        autocomplete="current-password"
                                         required
                                     />
                                     <div class="invalid-feedback">
@@ -288,7 +295,5 @@
             </section>
         </main>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="../src/js/uifunctions/regist.js"></script>
-        <script src="../src/js/uifunctions/tooltips.js"></script>
     </body>
 </html>
