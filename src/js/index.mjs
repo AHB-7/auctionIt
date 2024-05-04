@@ -9,10 +9,10 @@ function setupPageSpecificElements() {
             break
         case '/index.html':
             break
-        case '/html/auctions.html':
+        case '/auth/feed/feed.html':
             import('./ui-functions/filtering.mjs')
             break
-        case '/html/registering.html':
+        case '/auth/sign/registering.html':
             import('./ui-functions/regist.mjs')
             break
         default:

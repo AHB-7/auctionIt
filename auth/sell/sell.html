@@ -4,17 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home</title>
-        <link rel="stylesheet" href="dist/css/index.css" />
         <link
             rel="stylesheet"
-            href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+            href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
-        <link rel="stylesheet" href="../dist/css/index.css" />
+        <link rel="stylesheet" href="../../dist/css/index.css" />
+        <script type="module" src="../../src/js/index.mjs"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
             <nav class="navbar navbar-expand-sm z-3">
-                <div class="container position-relative">
+                <div class="container position-relative z-3">
                     <a
                         class="navbar-toggler text-white border-0 ps-1"
                         type="button"
@@ -27,29 +27,31 @@
                         <span class="bi bi-list fs-1"></span>
                     </a>
                     <div
-                        class="collapse navbar-collapse ps-2 pb-3 py-sm-0 ms-0 ms-sm-3 position-absolute top-0 mt-5 mt-sm-0 bg-brand-bk w-100"
-                        style="left: 0; max-width: 30rem"
+                        class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
+                        style="left: 0"
                         id="navbarNav"
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
-                                <a href="../index.html" class="nav-link"
+                                <a href="../../index.html" class="nav-link"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a
-                                    href="./auctions.html"
-                                    class="nav-link text-pbrand"
+                                <a href="./feed.html" class="nav-link"
                                     >Auctions</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./sell.html">Sell</a>
+                                <a
+                                    class="nav-link text-pbrand"
+                                    href="../sell/sell.html"
+                                    >Sell</a
+                                >
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./help.html"
+                                    href="../help.html"
                                     class="nav-link disabled"
                                     aria-disabled="true"
                                     >Help</a
@@ -57,12 +59,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div
-                        class="position-absolute top-0 pe-4 pt-0"
-                        style="right: 0"
-                    >
+                    <div class="position-absolute top-0 me-3" style="right: 0">
                         <a
-                            href="./registering.html"
+                            href="../sign/registering.html"
                             class="bi bi-box-arrow-in-right fs-4"
                             data-bs-toggle="tooltip"
                             data-bs-placement="left"
@@ -73,7 +72,6 @@
             </nav>
         </header>
         <main></main>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="../src/js/index.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </body>
 </html>

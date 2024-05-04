@@ -6,10 +6,10 @@
         <title>Home</title>
         <link
             rel="stylesheet"
-            href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+            href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
-        <link rel="stylesheet" href="../dist/css/index.css" />
-        <script type="module" src="../src/js/index.mjs"></script>
+        <link rel="stylesheet" href="../../dist/css/index.css" />
+        <script type="module" src="../../src/js/index.mjs"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
@@ -33,21 +33,23 @@
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
-                                <a href="../index.html" class="nav-link"
+                                <a href="../../index.html" class="nav-link"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a href="./auctions.html" class="nav-link"
+                                <a href="../feed/feed.html" class="nav-link"
                                     >Auctions</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./sell.html">Sell</a>
+                                <a class="nav-link" href="../sell/sell.html"
+                                    >Sell</a
+                                >
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./help.html"
+                                    href="../help.html"
                                     class="nav-link disabled"
                                     aria-disabled="true"
                                     >Help</a
@@ -113,8 +115,10 @@
                                     <input
                                         type="email"
                                         class="form-control"
+                                        pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
                                         autocomplete="email"
                                         id="email"
+                                        placeholder="yourname@noroff.no"
                                         required
                                     />
                                     <div class="invalid-feedback">
@@ -294,6 +298,6 @@
                 </div>
             </section>
         </main>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </body>
 </html>
