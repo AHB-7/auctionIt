@@ -16,7 +16,8 @@ export function createCustomModal(
 
     // Create the modal dialog container
     const modalDialog = document.createElement('div')
-    modalDialog.className = 'modal-dialog modal-dialog-centered'
+    modalDialog.className =
+        'modal-dialog modal-dialog-centered'
     modal.appendChild(modalDialog)
 
     // Create the modal content container

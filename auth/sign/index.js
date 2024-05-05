@@ -4,5 +4,3 @@ import '../../src/js/uifunctions/regist.mjs'
 
 signUp()
 signIn()
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-
