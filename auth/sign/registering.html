@@ -79,23 +79,23 @@
                         type="radio"
                         class="btn-check form-check-input"
                         name="options-outlined"
-                        id="signIn"
+                        id="signInBtn"
                         autocomplete="off"
                         checked
                     />
                     <label
                         class="btn btn-outline-primary position-relative"
-                        for="signIn"
+                        for="signInBtn"
                         >Sign In</label
                     >
                     <div
                         class="bg-dark w-100 py-3 px-0 position-absolute mt-5"
                         style="left: 0; top: 100%"
-                        id="signInForm"
+                        id="signInFormContainer"
                     >
                         <h1 class="my-3">Sign In</h1>
                         <form
-                            id="loginForm"
+                            id="signInForm"
                             class="needs-validation text-start"
                             novalidate
                         >
@@ -114,8 +114,8 @@
                                     </label>
                                     <input
                                         type="email"
+                                        pattern="^^[a-zA-Z0-9._]+@(stud\.noroff\.no|noroff\.no)$"
                                         class="form-control"
-                                        pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
                                         autocomplete="email"
                                         id="email"
                                         placeholder="yourname@noroff.no"
@@ -164,33 +164,33 @@
                         type="radio"
                         class="btn-check form-check-input"
                         name="options-outlined"
-                        id="signUp"
+                        id="signUpBtn"
                         autocomplete="off"
                     />
                     <label
                         class="btn btn-outline-primary rounded-end-2"
-                        for="signUp"
+                        for="signUpBtn"
                         >SignUp</label
                     >
                     <div
                         class="bg-dark w-100 position-absolute mt-5 p-0 d-none"
                         style="left: 0; top: 100%"
-                        id="signUpForm"
+                        id="signUpFormContainer"
                     >
                         <h1 class="my-3 col-12">Sign Up</h1>
                         <form
-                            id="SignUpform"
+                            id="signUpForm"
                             class="needs-validation text-start"
                             novalidate
                         >
                             <div class="row mb-3 align-items-end">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <label for="username" class="form-label"
                                         >Username
                                         <spam
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
-                                            data-bs-title="The username can't be shorter than 6 characters or included capital letters"
+                                            data-bs-title="The username Name can only use a-Z, 0-9, and _"
                                             ><i
                                                 class="bi bi-info-circle text-warning-emphasis"
                                             ></i></spam
@@ -207,32 +207,27 @@
                                         Please enter a valid username.
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <img
-                                        class="w-100 h-100 object-fit-cover rounded-2"
-                                        style="aspect-ratio: 1/1"
-                                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                                        alt=""
-                                    />
-                                </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-12">
                                     <label
                                         for="email-2"
                                         class="form-label w-100"
-                                        >Email
-                                        <spam
+                                    >
+                                        Email
+                                        <span
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
-                                            data-bs-title="The email address must include @norff.no or @stud.noroff.no"
-                                            ><i
+                                            data-bs-title="The email address must include @noroff.no or @stud.noroff.no"
+                                        >
+                                            <i
                                                 class="bi bi-info-circle text-warning-emphasis"
-                                            ></i
-                                        ></spam>
+                                            ></i>
+                                        </span>
                                     </label>
                                     <input
                                         type="email"
+                                        pattern="^[a-zA-Z0-9._]+@(stud\.noroff\.no|noroff\.no)$"
                                         class="form-control"
                                         id="email-2"
                                         required
@@ -268,25 +263,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-12">
-                                    <label for="url" class="form-label"
-                                        >Your Avatar
-                                        <spam
-                                            data-bs-toggle="tooltip"
-                                            data-bs-placement="right"
-                                            data-bs-title="If you don't upload an avatar, a default one will be used."
-                                            ><i
-                                                class="bi bi-info-circle text-warning-emphasis"
-                                            ></i></spam
-                                    ></label>
-                                    <input
-                                        type="url"
-                                        class="form-control"
-                                        id="url"
-                                    />
-                                </div>
-                            </div>
+
                             <button
                                 type="submit"
                                 class="btn btn-primary w-100 mt-4"

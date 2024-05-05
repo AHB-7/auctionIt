@@ -1,15 +1,20 @@
-import { signIn, signInForm, signUp, signUpForm } from '../global/variables.mjs'
+import {
+    signInBtn,
+    signInFormContainer,
+    signUpBtn,
+    signUpFormContainer,
+} from '../global/variables.mjs'
 
-signIn.addEventListener('click', function () {
-    if (signInForm.classList.contains('d-none')) {
-        signInForm.classList.remove('d-none')
-        signUpForm.classList.add('d-none')
+signInBtn.addEventListener('click', function () {
+    if (signInFormContainer.classList.contains('d-none')) {
+        signInFormContainer.classList.remove('d-none')
+        signUpFormContainer.classList.add('d-none')
     }
 })
-signUp.addEventListener('click', function () {
-    if (signUpForm.classList.contains('d-none')) {
-        signUpForm.classList.remove('d-none')
-        signInForm.classList.add('d-none')
+signUpBtn.addEventListener('click', function () {
+    if (signUpFormContainer.classList.contains('d-none')) {
+        signUpFormContainer.classList.remove('d-none')
+        signInFormContainer.classList.add('d-none')
     }
 })
 // validation for bootstrap forms
