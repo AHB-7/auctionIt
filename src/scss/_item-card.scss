@@ -11,8 +11,9 @@
         justify-content: space-between;
     }
     &-lg-container {
-        max-width: 40rem;
-        height: 100%;
+        aspect-ratio: 2/1;
+        width: auto;
+        max-width: none;
     }
 
     &-linking {
@@ -91,8 +92,9 @@
 }
 .carousel {
     &-container {
-        aspect-ratio: 1/1;
+        aspect-ratio: 2/1;
         width: 100%;
-        max-width: 35rem;
+        max-width: 70rem;
+        height: 100%;
     }
 }

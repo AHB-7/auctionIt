@@ -18,12 +18,17 @@ export function signIn() {
             return
         }
         try {
-            const responseData = await dofetch(LOGIN_URL, 'post', false, {
-                body: JSON.stringify({
-                    email: emailSignIn.value,
-                    password: passwordSignIn.value,
-                }),
-            })
+            const responseData = await dofetch(
+                LOGIN_URL,
+                'post',
+                false,
+                {
+                    body: JSON.stringify({
+                        email: emailSignIn.value,
+                        password: passwordSignIn.value,
+                    }),
+                }
+            )
             if (!responseData) {
                 createCustomModal(
                     'Invalid email or password',
@@ -36,7 +41,8 @@ export function signIn() {
                 )
             } else {
                 addAuthToken(responseData.accessToken)
-                window.location.href = '../../../auth/profile/profile.html'
+                window.location.href =
+                    '../../../auth/profile/profile.html'
             }
         } catch {
             createCustomModal(
@@ -46,9 +52,6 @@ export function signIn() {
                 'Try again',
                 () => {
                     window.location.reload()
-                },
-                () => {
-                    console.log('Modal closed')
                 }
             )
         }

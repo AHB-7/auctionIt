@@ -10009,8 +10009,9 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 .item-lg-container {
-  max-width: 40rem;
-  height: 100%;
+  aspect-ratio: 2/1;
+  width: auto;
+  max-width: none;
 }
 .item-linking {
   width: 100%;
@@ -10083,9 +10084,10 @@ textarea.form-control-lg {
   }
 }
 .carousel-container {
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/1;
   width: 100%;
-  max-width: 35rem;
+  max-width: 70rem;
+  height: 100%;
 }
 
 .carousel {

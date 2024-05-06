@@ -73,7 +73,9 @@
     .active.carousel-item-end {
         z-index: 0;
         opacity: 0;
-        @include transition(opacity 0s $carousel-transition-duration);
+        @include transition(
+            opacity 0s $carousel-transition-duration
+        );
     }
 }
 
@@ -114,7 +116,11 @@
     margin-right: 7rem;
     background-image: if(
         $enable-gradients,
-        linear-gradient(90deg, rgba($black, 0.25), rgba($black, 0.001)),
+        linear-gradient(
+            90deg,
+            rgba($black, 0.25),
+            rgba($black, 0.001)
+        ),
         null
     );
 }
@@ -124,7 +130,11 @@
 
     background-image: if(
         $enable-gradients,
-        linear-gradient(270deg, rgba($black, 0.25), rgba($black, 0.001)),
+        linear-gradient(
+            270deg,
+            rgba($black, 0.25),
+            rgba($black, 0.001)
+        ),
         null
     );
 }
@@ -162,8 +172,10 @@
         background-clip: padding-box;
         border: 0;
         // Use transparent borders to increase the hit area by 10px on top and bottom.
-        border-top: $carousel-indicator-hit-area-height solid transparent;
-        border-bottom: $carousel-indicator-hit-area-height solid transparent;
+        border-top: $carousel-indicator-hit-area-height
+            solid transparent;
+        border-bottom: $carousel-indicator-hit-area-height
+            solid transparent;
         opacity: $carousel-indicator-opacity;
         @include transition($carousel-indicator-transition);
     }
