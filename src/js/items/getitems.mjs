@@ -1,5 +1,5 @@
 import { createCarouselItem } from '../global/createcarouselitem.mjs'
-import { itemCardNoAuth } from '../global/itemcard.mjs'
+import { creatItemCard } from '../global/creatitemcard.mjs'
 
 export function getItems(
     startcounter,
@@ -14,7 +14,7 @@ export function getItems(
     ) {
         const item = auction[i]
         container.appendChild(
-            itemCardNoAuth(
+            creatItemCard(
                 item.media || '',
                 item.title,
                 item._count ? item._count.bids : 'No bids'

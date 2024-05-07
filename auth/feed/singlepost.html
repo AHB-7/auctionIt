@@ -7,22 +7,27 @@
             content="width=device-width, initial-scale=1.0"
         />
         <title>Home</title>
-        <link rel="stylesheet" href="dist/css/index.css" />
         <link
             rel="stylesheet"
-            href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+            href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
         <link
             rel="stylesheet"
-            href="../dist/css/index.css"
+            href="../../dist/css/index.css"
         />
+        <script
+            type="module"
+            src="./singlepost.js"
+        ></script>
     </head>
     <body data-bs-theme="dark">
         <header>
             <nav class="navbar navbar-expand-sm z-3">
-                <div class="container position-relative">
+                <div
+                    class="container position-relative z-3"
+                >
                     <a
-                        class="navbar-toggler text-white border-0 ps-0"
+                        class="navbar-toggler text-white border-0 ps-1"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
@@ -35,21 +40,21 @@
                         ></span>
                     </a>
                     <div
-                        class="collapse navbar-collapse ps-2 pb-3 py-sm-0 ms-0 ms-sm-3 position-absolute top-0 mt-5 mt-sm-0 bg-brand-bk w-100"
-                        style="left: 0; max-width: 30rem"
+                        class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
+                        style="left: 0"
                         id="navbarNav"
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
                                 <a
-                                    href="../index.html"
+                                    href="../../index.html"
                                     class="nav-link"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./auctions.html"
+                                    href="./feed.html"
                                     class="nav-link text-pbrand"
                                     >Auctions</a
                                 >
@@ -57,13 +62,13 @@
                             <li class="nav-item">
                                 <a
                                     class="nav-link"
-                                    href="./sell.html"
+                                    href="../sell/sell.html"
                                     >Sell</a
                                 >
                             </li>
                             <li class="nav-item">
                                 <a
-                                    href="./help.html"
+                                    href="../help.html"
                                     class="nav-link disabled"
                                     aria-disabled="true"
                                     >Help</a
@@ -72,11 +77,11 @@
                         </ul>
                     </div>
                     <div
-                        class="position-absolute top-0 pe-4 pt-0"
+                        class="position-absolute top-0 me-3"
                         style="right: 0"
                     >
                         <a
-                            href="./registering.html"
+                            href="../sign/registering.html"
                             class="bi bi-box-arrow-in-right fs-4"
                             data-bs-toggle="tooltip"
                             data-bs-placement="left"
@@ -86,7 +91,271 @@
                 </div>
             </nav>
         </header>
-        <main></main>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <main>
+            <section
+                class="container mt-md-5 mt-4 pt-md-4 mt-0"
+            >
+                <div
+                    class="row align-items-center justify-content-between mx-0"
+                >
+                    <div class="col-auto d-flex p-0">
+                        <img
+                            class="profile profile-img"
+                            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt=""
+                        />
+                        <div class="text-box ps-2">
+                            <p class="m-0 fs-5">UserName</p>
+                        </div>
+                    </div>
+                    <div class="profile profile-add-w">
+                        <i
+                            class="bi bi-binoculars fs-2"
+                        ></i>
+                    </div>
+                </div>
+                <div
+                    class="row align-items-start justify-content-between mx-auto"
+                >
+                    <div
+                        class="col-md-5 col-12 ms-0 mt-0 mt-3 p-0"
+                    >
+                        <div>
+                            <img
+                                class="w-100 profile"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                alt=""
+                            />
+                        </div>
+                        <div
+                            class="row justify-content-between align-items-end mt-2"
+                        >
+                            <div class="col-auto">
+                                <h1 class="fs-3 m-0">
+                                    Item title
+                                </h1>
+                            </div>
+                            <div class="col-auto">
+                                <p class="fs-4 m-0">
+                                    55
+                                    <strong
+                                        class="text-primary"
+                                        >CR</strong
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="fs-small lh-0 m-0">
+                                Created :
+                                <strong>12.12.1212</strong>
+                            </p>
+                            <p class="fs-small m-0 lh-1">
+                                Ends :
+                                <strong>12.12.1212</strong>
+                            </p>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="input-group mb-3">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Write Your Bidding Information"
+                                    aria-label="Write Your Bidding Information"
+                                    aria-describedby="bidBtn"
+                                />
+                                <button
+                                    class="btn btn-outline-success"
+                                    type="button"
+                                    id="bidBtn"
+                                >
+                                    BID
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 mt-3 p-0">
+                        <div class="row">
+                            <h3 class="fs-4">
+                                Description
+                            </h3>
+                            <hr />
+                        </div>
+                        <div class="row bid-info">
+                            <p>
+                                Lorem ipsum dolor sit, amet
+                                consectetur adipisicing
+                                elit. Esse totam perferendis
+                                expedita error temporibus
+                                sunt id magnam, facilis
+                                alias explicabo doloribus
+                                nesciunt cumque sed fugiat,
+                                incidunt animi? Qui, quas!
+                                Fuga.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p class="fs-3">
+                                Time remaining:
+                                <span class="fs-3"
+                                    >24:12:20</span
+                                >
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p class="fs-4 m-0">
+                                People's bids
+                            </p>
+                            <hr />
+                        </div>
+                        <div
+                            class="row pb-3 rounded-3 bid-history pe-2"
+                        >
+                            <div
+                                class="row justify-content-between align-items-center px-0 mx-auto shadow"
+                            >
+                                <div
+                                    class="col-auto d-flex align-items-center"
+                                >
+                                    <img
+                                        class="profile profile-img"
+                                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                        alt=""
+                                    />
+                                    <div class="lh-2">
+                                        <div
+                                            class="ps-2 m-0"
+                                        >
+                                            <p
+                                                class="m-0 fs-5"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                        <div class="ps-2">
+                                            <p
+                                                class="m-0 fs-small"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-auto ms-auto"
+                                >
+                                    <p
+                                        class="fs-4 m-0 h-100"
+                                    >
+                                        15
+                                        <strong
+                                            class="text-primary"
+                                            >CR</strong
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row justify-content-between px-0 align-items-center mx-auto shadow"
+                            >
+                                <div
+                                    class="col-auto d-flex align-items-center"
+                                >
+                                    <img
+                                        class="profile profile-img"
+                                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                        alt=""
+                                    />
+                                    <div class="lh-2">
+                                        <div
+                                            class="ps-2 m-0"
+                                        >
+                                            <p
+                                                class="m-0 fs-5"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                        <div class="ps-2">
+                                            <p
+                                                class="m-0 fs-small"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-auto ms-auto"
+                                >
+                                    <p
+                                        class="fs-4 m-0 h-100"
+                                    >
+                                        15
+                                        <strong
+                                            class="text-primary"
+                                            >CR</strong
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="row justify-content-between px-0 align-items-center mx-auto shadow"
+                            >
+                                <div
+                                    class="col-auto d-flex align-items-center"
+                                >
+                                    <img
+                                        class="profile profile-img"
+                                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                        alt=""
+                                    />
+                                    <div class="lh-2">
+                                        <div
+                                            class="ps-2 m-0"
+                                        >
+                                            <p
+                                                class="m-0 fs-5"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                        <div class="ps-2">
+                                            <p
+                                                class="m-0 fs-small"
+                                            >
+                                                UserName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-auto ms-auto"
+                                >
+                                    <p
+                                        class="fs-4 m-0 h-100"
+                                    >
+                                        15
+                                        <strong
+                                            class="text-primary"
+                                            >CR</strong
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a
+                                href="./feed.html"
+                                class="btn btn-primary w-100 mt-4 py-2"
+                            >
+                                Back to Feed
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </body>
 </html>

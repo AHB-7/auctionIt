@@ -1,15 +1,15 @@
-export function itemCardNoAuth(img, title, bid, id) {
+export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
         'item-container flex-shrink-0 m-2'
 
     const itemLinking = document.createElement('a')
-    itemLinking.href = ''
+    itemLinking.href = '../../../auth/feed/singlepost.html'
     itemLinking.className = 'item-linking'
 
     const itemImg = document.createElement('img')
     itemImg.src = img
-    itemImg.alt = ''
+    itemImg.alt = title
     itemImg.className = 'item-img'
     itemLinking.appendChild(itemImg)
 
@@ -31,7 +31,7 @@ export function itemCardNoAuth(img, title, bid, id) {
     itemInfo.className = 'item-info'
 
     const itemInfoInner = document.createElement('div')
-    itemInfoInner.className = 'item-info-inner' 
+    itemInfoInner.className = 'item-info-inner'
 
     const itemText = document.createElement('div')
     const itemName = document.createElement('p')
