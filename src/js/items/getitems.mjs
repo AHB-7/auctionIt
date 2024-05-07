@@ -22,7 +22,6 @@ export function getItems(
         )
     }
 }
-
 export function getCarouselItems(
     startcounter,
     counter,

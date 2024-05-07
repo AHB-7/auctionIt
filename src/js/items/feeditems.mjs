@@ -1,11 +1,11 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
+import { getItems } from './getitems.mjs'
 import {
     LISTING_URL,
     auctionsContainer,
     showMoreActions,
 } from '../global/variables.mjs'
-import { getItems } from './getitems.mjs'
 
 let current = 18
 

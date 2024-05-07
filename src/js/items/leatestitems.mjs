@@ -1,10 +1,10 @@
 import { dofetch } from '../auth/fetch.mjs'
-import { getItems } from './getitems.mjs'
 import {
     LISTING_URL,
     leatestItemsContainer,
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
+import { getItems } from './getitems.mjs'
 
 export async function leatestAuction() {
     try {
