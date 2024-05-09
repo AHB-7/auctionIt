@@ -6,10 +6,11 @@ import {
     auctionsContainer,
     showMoreActions,
 } from '../global/variables.mjs'
+import { addId } from '../global/localstorage.mjs'
 
 let current = 18
 
-export async function feedItems() {
+export async function getFeedItems() {
     try {
         const response = await dofetch(
             LISTING_URL,
@@ -26,6 +27,15 @@ export async function feedItems() {
                 response
             )
             current += 9
+        })
+        const itemCards = document.querySelectorAll(
+            '.item-container'
+        )
+        itemCards.forEach((item) => {
+            item.addEventListener('mouseenter', () => {
+                console.log(item.id)
+                addId(item.id)
+            })
         })
     } catch {
         createCustomModal(

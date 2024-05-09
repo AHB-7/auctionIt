@@ -6,7 +6,7 @@ import {
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { getItems } from './getitems.mjs'
 
-export async function leatestAuction() {
+export async function getLeatestAuction() {
     try {
         const response = await dofetch(
             LISTING_URL,

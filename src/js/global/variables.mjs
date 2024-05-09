@@ -69,4 +69,13 @@ export const showMoreActions = document.querySelector(
 export const auctionsContainer = document.getElementById(
     'auctions-container'
 )
-export const carouselContainer = document.getElementById('carouselContainer')
+export const carouselContainer = document.getElementById(
+    'carouselContainer'
+)
+
+export const singleitemContainer = document.getElementById(
+    'singleitemContainer'
+)
+export function lastArryItem(ar) {
+    ar.length - (ar.length - 1)
+}
