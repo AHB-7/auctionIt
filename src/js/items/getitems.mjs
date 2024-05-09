@@ -17,7 +17,8 @@ export function getItems(
             creatItemCard(
                 item.media || '',
                 item.title,
-                item._count ? item._count.bids : 'No bids'
+                item._count ? item._count.bids : 'No bids',
+                item.id
             )
         )
     }

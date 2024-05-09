@@ -2,13 +2,19 @@ export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
         'item-container flex-shrink-0 m-2'
+    itemContainer.id = id
 
     const itemLinking = document.createElement('a')
-    itemLinking.href = '../../../auth/feed/singlepost.html'
+    itemLinking.href = './singlepost.html'
     itemLinking.className = 'item-linking'
 
     const itemImg = document.createElement('img')
-    itemImg.src = img
+    const defaultImg =
+        'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
+    itemImg.src =
+        Array.isArray(img) && img.length > 0
+            ? img[0]
+            : defaultImg
     itemImg.alt = title
     itemImg.className = 'item-img'
     itemLinking.appendChild(itemImg)
@@ -52,7 +58,7 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemAction = document.createElement('div')
     const itemReadMore = document.createElement('a')
-    itemReadMore.href = './html/infopage.html'
+    itemReadMore.href = './singlepost.html'
     itemReadMore.className =
         'bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-md-block'
     itemReadMore.style.width = 'fit-content'

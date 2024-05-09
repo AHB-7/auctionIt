@@ -19,12 +19,17 @@ export function createCarouselItem(
 
     // Create the link wrapper for the image
     const itemLink = document.createElement('a')
-    itemLink.href = '#'
+    itemLink.href = '../../../auth/feed/singlepost.html'
     itemLink.className = 'item-linking'
 
     // Create the image element
     const itemImg = document.createElement('img')
-    itemImg.src = img
+    const defaultImg =
+        'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
+    itemImg.src =
+        Array.isArray(img) && img.length > 0
+            ? img[0]
+            : defaultImg
     itemImg.alt = title
     itemImg.className = 'item-img'
     itemLink.appendChild(itemImg)
@@ -33,7 +38,7 @@ export function createCarouselItem(
     const itemFavBtn = document.createElement('div')
     itemFavBtn.className = 'item-fav-btn'
     const favLink = document.createElement('a')
-    favLink.href = '#'
+    favLink.href = ''
     favLink.setAttribute('data-bs-toggle', 'tooltip')
     favLink.setAttribute('data-bs-placement', 'left')
     favLink.setAttribute(

@@ -6,7 +6,7 @@ import {
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 
-export async function carouselContent() {
+export async function getCarouselContent() {
     try {
         const response = await dofetch(
             LISTING_URL,
