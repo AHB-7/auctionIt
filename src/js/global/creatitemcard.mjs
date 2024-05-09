@@ -1,3 +1,5 @@
+import { checkPath } from './variables.mjs'
+
 export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
@@ -5,7 +7,14 @@ export function creatItemCard(img, title, bid, id) {
     itemContainer.id = id
 
     const itemLinking = document.createElement('a')
-    itemLinking.href = './singlepost.html'
+
+    itemLinking.href = checkPath(
+        'e',
+        'index.html',
+        '/auth/feed/singlepost.html',
+        './singlepost.html'
+    )
+
     itemLinking.className = 'item-linking'
 
     const itemImg = document.createElement('img')
@@ -47,7 +56,7 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemPrice = document.createElement('p')
     itemPrice.className = 'm-0 lh-sm'
-    itemPrice.textContent = 'Floor Price: ' + bid + ' '
+    itemPrice.textContent = 'Floor Price: ' + bid
     const itemPriceStrong = document.createElement('strong')
     itemPriceStrong.className = 'text-pbrand'
     itemPriceStrong.textContent = 'CR'

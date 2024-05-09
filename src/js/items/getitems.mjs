@@ -13,14 +13,19 @@ export function getItems(
         i++
     ) {
         const item = auction[i]
-        container.appendChild(
-            creatItemCard(
-                item.media || '',
-                item.title,
-                item._count ? item._count.bids : 'No bids',
-                item.id
+        if (item.bids.length > 0) {
+            const latestBid =
+                item.bids[item.bids.length - 1]
+
+            container.appendChild(
+                creatItemCard(
+                    item.media || '',
+                    item.title,
+                    latestBid.amount,
+                    item.id
+                )
             )
-        )
+        }
     }
 }
 export function getCarouselItems(
@@ -39,7 +44,7 @@ export function getCarouselItems(
         const carouselItem = createCarouselItem(
             item.media || '',
             item.title,
-            item._count ? item._count.bids : 'No bids',
+            item.bids[item.bids.length - 1].amount,
             item.id,
             isActive
         )

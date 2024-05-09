@@ -142,7 +142,7 @@
                         class="btn btn-outline-primary position-relative"
                         for="filter"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
+                        data-bs-placement="left"
                         data-bs-title="Click here to filter the auctions..."
                         >Filter</label
                     >
@@ -195,7 +195,7 @@
                         class="btn btn-outline-primary rounded-end-2"
                         for="sort"
                         data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
+                        data-bs-placement="right"
                         data-bs-title="Click here to choose the sorting method..."
                         >Sort</label
                     >
@@ -208,15 +208,15 @@
                         >
                             <input
                                 class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="art"
+                                type="radio"
+                                name="sortRadios"
+                                id="filterLow"
                             />
                             <label
-                                class="form-check-label"
-                                for="art"
+                                class="form-check-label ps-2"
+                                for="filterLow"
                             >
-                                Art
+                                Price (Low to High)
                             </label>
                         </div>
                         <div
@@ -224,16 +224,47 @@
                         >
                             <input
                                 class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                                checked
+                                type="radio"
+                                name="sortRadios"
+                                id="filterHigh"
                             />
                             <label
-                                class="form-check-label"
-                                for="flexCheckChecked"
+                                class="form-check-label ps-2"
+                                for="filterHigh"
                             >
-                                Checked checkbox
+                                Price (High to Low)
+                            </label>
+                        </div>
+                        <div
+                            class="form-check d-flex gap-1 py-1"
+                        >
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sortRadios"
+                                id="filterAa"
+                            />
+                            <label
+                                class="form-check-label ps-2"
+                                for="filterAa"
+                            >
+                                Aa-Zz
+                            </label>
+                        </div>
+                        <div
+                            class="form-check d-flex gap-1 py-1"
+                        >
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="sortRadios"
+                                id="filterNewest"
+                            />
+                            <label
+                                class="form-check-label ps-2"
+                                for="filterNewest"
+                            >
+                                Newest
                             </label>
                         </div>
                     </div>
@@ -245,17 +276,15 @@
                     id="auctions-container"
                 ></div>
             </section>
-
             <section class="container my-5 px-3">
-                <button type="button"
+                <button
+                    type="button"
                     class="bg-pbrand py-1 btn-w-cotroler rounded-1 shadow-dark mx-auto w-100"
                     id="showMoreActions"
                     style="width: fit-content"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    data-bs-title="Click to browse more auctions"
-                    >Show More</a
                 >
+                    Show More
+                </button>
             </section>
         </main>
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

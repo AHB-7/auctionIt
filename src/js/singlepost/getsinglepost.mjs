@@ -1,5 +1,5 @@
 import { dofetch } from '../auth/fetch.mjs'
-import { calculateTimeRemaining } from '../global/calculateTimeRemaining.mjs'
+import { calculateTimeRemaining } from '../global/calculatetimeremaining.mjs'
 import { createSinglePost } from '../global/creatsinglepost.mjs'
 import { getId } from '../global/localstorage.mjs'
 import {
@@ -30,6 +30,7 @@ export async function getSingleItem() {
         const timeRemaining = calculateTimeRemaining(
             response.endsAt
         )
+
         singleitemContainer.appendChild(
             createSinglePost(
                 response.seller.avatar,

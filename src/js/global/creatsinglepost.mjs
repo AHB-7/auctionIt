@@ -27,7 +27,9 @@ export function createSinglePost(
 
     const img1 = document.createElement('img')
     img1.className = 'profile profile-img'
-    img1.src = profileImage
+    img1.src =
+        profileImage ||
+        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
     img1.alt = ''
     col1Row1.appendChild(img1)
 
@@ -51,21 +53,23 @@ export function createSinglePost(
     // Second row for item details and description
     const row2 = document.createElement('div')
     row2.className =
-        'row align-items-start justify-content-between mx-auto'
+        'row align-items-start justify-content-between mx-auto mb-5'
     section.appendChild(row2)
 
     const col1Row2 = document.createElement('div')
     col1Row2.className =
-        'col-md-5 col-12 ms-0 mt-0 mt-3 p-0'
+        'col-md-5 col-12 ms-0 mt-0 p-0'
     row2.appendChild(col1Row2)
 
     const itemImage = document.createElement('div')
-    itemImage.className = 'ratio ratio-1x1'
+    itemImage.className = 'ratio ratio-1x1 mt-4 h-100'
 
     const img2 = document.createElement('img')
-    img2.className = 'w-100 profile'
-    img2.src = image
-    img2.alt = ''
+    img2.className = 'h-100 profile object-fit-cover '
+    img2.src =
+        image ||
+        'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
+    img2.alt = title
     itemImage.appendChild(img2)
     col1Row2.appendChild(itemImage)
 
@@ -80,7 +84,7 @@ export function createSinglePost(
 
     const itemTitle = document.createElement('h1')
     itemTitle.className = 'fs-3 m-0'
-    itemTitle.textContent = 'Item title'
+    itemTitle.textContent = title
     itemTitleCol.appendChild(itemTitle)
 
     const itemPriceCol = document.createElement('div')
@@ -144,16 +148,6 @@ export function createSinglePost(
     )
     inputGroup.appendChild(input)
 
-    const backBtnContainer = document.createElement('div')
-    backBtnContainer.className = 'mt-auto   '
-    col2Row2.appendChild(backBtnContainer)
-
-    const backButton = document.createElement('a')
-    backButton.href = './feed.html'
-    backButton.className = 'btn btn-secondary w-100 py-2'
-    backButton.textContent = 'Back to Feed'
-    backBtnContainer.appendChild(backButton)
-
     const bidButton = document.createElement('button')
     bidButton.className = 'btn btn-outline-success'
     bidButton.type = 'button'
@@ -172,8 +166,18 @@ export function createSinglePost(
 
     // Create the bid rows (example shown for one bid, you can loop this part for multiple bids)
 
-    const bids = bidCreaters(allBids) // Assume bidCreaters is modified to handle multiple bids
+    const bids = bidCreaters(allBids)
     col2Row2.appendChild(bids)
+
+    const backBtnContainer = document.createElement('div')
+    backBtnContainer.className = 'mt-4'
+    col2Row2.appendChild(backBtnContainer)
+
+    const backButton = document.createElement('a')
+    backButton.href = './feed.html'
+    backButton.className = 'btn btn-secondary w-100 py-2'
+    backButton.textContent = 'Back to Feed'
+    backBtnContainer.appendChild(backButton)
 
     return section
 }

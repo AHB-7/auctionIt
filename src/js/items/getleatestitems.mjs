@@ -9,7 +9,7 @@ import { getItems } from './getitems.mjs'
 export async function getLeatestAuction() {
     try {
         const response = await dofetch(
-            LISTING_URL,
+            LISTING_URL + '/?_bids=true',
             'GET',
             false
         )

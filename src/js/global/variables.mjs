@@ -79,3 +79,24 @@ export const singleitemContainer = document.getElementById(
 export function lastArryItem(ar) {
     ar.length - (ar.length - 1)
 }
+export const filterNewest =
+    document.getElementById('filterNewest')
+export const filterAa = document.getElementById('filterAa')
+export const filterHigh =
+    document.getElementById('filterAa')
+export const filterLow =
+    document.getElementById('filterLow')
+export function checkPath(
+    vriable,
+    include,
+    firstoption,
+    secondoption
+) {
+    vriable = ''
+    if (window.location.pathname.includes(include)) {
+        vriable = firstoption
+    } else {
+        vriable = secondoption
+    }
+    return vriable
+}

@@ -4,39 +4,25 @@ import { getItems } from './getitems.mjs'
 import {
     LISTING_URL,
     auctionsContainer,
-    showMoreActions,
 } from '../global/variables.mjs'
-import { addId } from '../global/localstorage.mjs'
+import { idReader } from '../global/idreder.mjs'
+import { attachEventListeners } from '../feedsfunction/evenets.mjs'
+import { createLoader } from '../global/loading.mjs'
 
 let current = 18
 
 export async function getFeedItems() {
+    createLoader(auctionsContainer)
     try {
         const response = await dofetch(
-            LISTING_URL,
+            LISTING_URL + '/?_bids=true',
             'GET',
             false
         )
         auctionsContainer.innerHTML = ''
         getItems(0, current, auctionsContainer, response)
-        showMoreActions.addEventListener('click', () => {
-            getItems(
-                current,
-                current + 9,
-                auctionsContainer,
-                response
-            )
-            current += 9
-        })
-        const itemCards = document.querySelectorAll(
-            '.item-container'
-        )
-        itemCards.forEach((item) => {
-            item.addEventListener('mouseenter', () => {
-                console.log(item.id)
-                addId(item.id)
-            })
-        })
+
+        attachEventListeners(response)
     } catch {
         createCustomModal(
             'Something went wrong',
@@ -47,5 +33,7 @@ export async function getFeedItems() {
                 window.location.reload()
             }
         )
+    } finally {
+        idReader()
     }
 }

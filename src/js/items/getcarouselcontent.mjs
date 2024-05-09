@@ -5,17 +5,18 @@ import {
     carouselContainer,
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
+import { idReader } from '../global/idreder.mjs'
 
 export async function getCarouselContent() {
     try {
         const response = await dofetch(
-            LISTING_URL,
+            LISTING_URL + '/?_bids=true',
             'GET',
             false
         )
-
         carouselContainer.innerHTML = ''
         getCarouselItems(0, 3, carouselContainer, response)
+        idReader()
     } catch {
         createCustomModal(
             'Something went wrong',
