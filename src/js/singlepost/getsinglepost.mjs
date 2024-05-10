@@ -27,7 +27,7 @@ export async function getSingleItem() {
         const endAt = new Date(
             response.endsAt
         ).toLocaleDateString()
-        const timeRemaining = calculateTimeRemaining(
+        const timeRemainingg = calculateTimeRemaining(
             response.endsAt
         )
 
@@ -41,7 +41,7 @@ export async function getSingleItem() {
                 created,
                 endAt,
                 response.description,
-                timeRemaining,
+                timeRemainingg,
                 response.bids
             )
         )
