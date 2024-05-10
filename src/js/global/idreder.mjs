@@ -1,13 +1,13 @@
 import { addId } from './localstorage.mjs'
 
-export function idReader() {
-    const itemCards = document.querySelectorAll(
-        '.item-container'
-    )
-    itemCards.forEach((item) => {
-        item.addEventListener('click', () => {
-            console.log(item.id)
-            addId(item.id)
+export function idReader(selector) {
+    const elements = document.querySelectorAll(selector)
+    elements.forEach((element) => {
+        element.addEventListener('click', () => {
+            console.log(element.id)
+            if (typeof addId === 'function') {
+                addId(element.id)
+            }
         })
     })
 }

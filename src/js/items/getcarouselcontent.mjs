@@ -6,6 +6,7 @@ import {
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { idReader } from '../global/idreder.mjs'
+// import { idReader } from '../global/idreder.mjs'
 
 export async function getCarouselContent() {
     try {
@@ -16,7 +17,7 @@ export async function getCarouselContent() {
         )
         carouselContainer.innerHTML = ''
         getCarouselItems(0, 3, carouselContainer, response)
-        idReader()
+        idReader('.item-container')
     } catch {
         createCustomModal(
             'Something went wrong',

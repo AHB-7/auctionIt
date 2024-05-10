@@ -5,6 +5,7 @@ import {
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { getItems } from './getitems.mjs'
+import { idReader } from '../global/idreder.mjs'
 
 export async function getLeatestAuction() {
     try {
@@ -13,9 +14,9 @@ export async function getLeatestAuction() {
             'GET',
             false
         )
-
         leatestItemsContainer.innerHTML = ''
         getItems(0, 3, leatestItemsContainer, response)
+        idReader('.item-container')
     } catch {
         createCustomModal(
             'Something went wrong',

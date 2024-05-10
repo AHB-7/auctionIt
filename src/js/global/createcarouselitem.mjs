@@ -10,16 +10,17 @@ export function createCarouselItem(
     carouselItem.className = isActive
         ? 'carousel-item active'
         : 'carousel-item'
-    carouselItem.id = id
 
     // Create the item container
     const itemContainer = document.createElement('div')
     itemContainer.className =
         'item-container item-lg-container'
+    itemContainer.id = id
 
     // Create the link wrapper for the image
     const itemLink = document.createElement('a')
-    itemLink.href = './auth/feed/singlepost.html'
+    itemLink.href = '../auth/feed/singlepost.html'
+
     itemLink.className = 'item-linking'
 
     // Create the image element

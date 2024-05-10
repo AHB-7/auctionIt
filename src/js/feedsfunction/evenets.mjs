@@ -22,7 +22,7 @@ export function attachEventListeners(data) {
                 data
             )
             current += 9
-            idReader()
+            idReader('.item-container')
         })
 
         filterNewest.addEventListener(
@@ -31,7 +31,7 @@ export function attachEventListeners(data) {
                 if (this.checked) {
                     sortItemsByTitle(data)
                 }
-                idReader()
+                idReader('.item-container')
             }
         )
     }

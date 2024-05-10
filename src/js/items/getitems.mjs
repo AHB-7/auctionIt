@@ -41,10 +41,11 @@ export function getCarouselItems(
     ) {
         const item = auction[i]
         const isActive = i === startcounter
+        const latestBid = item.bids[item.bids.length - 1]
         const carouselItem = createCarouselItem(
             item.media || '',
             item.title,
-            item.bids[item.bids.length - 1].amount,
+            latestBid.amount,
             item.id,
             isActive
         )

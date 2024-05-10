@@ -34,6 +34,6 @@ export async function getFeedItems() {
             }
         )
     } finally {
-        idReader()
+        idReader('.item-container')
     }
 }
