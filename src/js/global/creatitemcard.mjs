@@ -10,9 +10,9 @@ export function creatItemCard(img, title, bid, id) {
 
     itemLinking.href = checkPath(
         'e',
-        '/feed/feed.html',
+        'feed.html',
         './singlepost.html',
-        '/auth/feed/singlepost.html'
+        '/auctionIt/auth/feed/singlepost.html'
     )
 
     itemLinking.className = 'item-linking'
