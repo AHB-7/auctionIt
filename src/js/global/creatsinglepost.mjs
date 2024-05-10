@@ -57,8 +57,7 @@ export function createSinglePost(
     section.appendChild(row2)
 
     const col1Row2 = document.createElement('div')
-    col1Row2.className =
-        'col-md-5 col-12 ms-0 mt-0 p-0'
+    col1Row2.className = 'col-md-5 col-12 ms-0 mt-0 p-0'
     row2.appendChild(col1Row2)
 
     const itemImage = document.createElement('div')

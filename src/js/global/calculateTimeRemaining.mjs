@@ -3,7 +3,6 @@ export function calculateTimeRemaining(endDateTime) {
     const now = new Date()
     const timeRemaining = endDate - now
 
-    // Convert time remaining from milliseconds to a more readable format
     if (timeRemaining > 0) {
         const days = Math.floor(
             timeRemaining / (1000 * 60 * 60 * 24)
@@ -15,7 +14,7 @@ export function calculateTimeRemaining(endDateTime) {
         const minutes = Math.floor(
             (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
         )
-        return `${days} days, ${hours} hours, and ${minutes} minutes remaining`
+        return `${days}d, ${hours}h, ${minutes} m`
     }
     return 'Auction ended'
 }

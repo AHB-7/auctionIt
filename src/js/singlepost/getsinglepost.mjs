@@ -27,9 +27,8 @@ export async function getSingleItem() {
         const endAt = new Date(
             response.endsAt
         ).toLocaleDateString()
-        const timeRemainingg = calculateTimeRemaining(
-            response.endsAt
-        )
+        const timeRemainingCalculated =
+            calculateTimeRemaining(endAt)
 
         singleitemContainer.appendChild(
             createSinglePost(
@@ -41,7 +40,7 @@ export async function getSingleItem() {
                 created,
                 endAt,
                 response.description,
-                timeRemainingg,
+                timeRemainingCalculated,
                 response.bids
             )
         )
