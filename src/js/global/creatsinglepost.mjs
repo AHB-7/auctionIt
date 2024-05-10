@@ -7,7 +7,6 @@ export function createSinglePost(
     creationDate,
     endDate,
     description,
-    timeRemaining,
     allBids
 ) {
     // Main container section
@@ -82,7 +81,7 @@ export function createSinglePost(
     itemDetailsRow.appendChild(itemTitleCol)
 
     const itemTitle = document.createElement('h1')
-    itemTitle.className = 'fs-3 m-0'
+    itemTitle.className = 'fs-3 m-0 text-break'
     itemTitle.textContent = title
     itemTitleCol.appendChild(itemTitle)
 
@@ -123,13 +122,15 @@ export function createSinglePost(
     hr.className = 'mb-4 mt-0'
 
     const descriptionContent = document.createElement('p')
+    descriptionContent.style.height = '6rem'
+    descriptionContent.style.overflowY = 'auto'
     descriptionContent.textContent = description
     col2Row2.appendChild(descriptionContent)
 
-    const timeRemainingg = document.createElement('p')
-    timeRemainingg.className = 'fs-3'
-    timeRemainingg.innerHTML = `Time remaining: <span class="fs-3">${timeRemaining}</span>`
-    col2Row2.appendChild(timeRemainingg)
+    // const timeRemainingg = document.createElement('p')
+    // timeRemainingg.className = 'fs-3'
+    // timeRemainingg.innerHTML = `Time remaining: <span class="fs-3">${timeRemaining}</span>`
+    // col2Row2.appendChild(timeRemainingg)
 
     // Link to go back
 

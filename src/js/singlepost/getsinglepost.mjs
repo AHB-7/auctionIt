@@ -1,5 +1,4 @@
 import { dofetch } from '../auth/fetch.mjs'
-import { calculateTimeRemaining } from '../global/calculatetimeremaining.mjs'
 import { createSinglePost } from '../global/creatsinglepost.mjs'
 import { getId } from '../global/localstorage.mjs'
 import {
@@ -27,7 +26,6 @@ export async function getSingleItem() {
         const endAt = new Date(
             response.endsAt
         ).toLocaleDateString()
-        const timer = calculateTimeRemaining(endAt)
 
         singleitemContainer.appendChild(
             createSinglePost(
@@ -39,7 +37,6 @@ export async function getSingleItem() {
                 created,
                 endAt,
                 response.description,
-                timer,
                 response.bids
             )
         )
