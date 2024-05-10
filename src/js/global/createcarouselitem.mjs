@@ -1,5 +1,3 @@
-import { checkPath } from './variables.mjs'
-
 export function createCarouselItem(
     img,
     title,
