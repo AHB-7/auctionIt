@@ -11,7 +11,7 @@ export function creatItemCard(img, title, bid, id) {
     itemLinking.href = checkPath(
         'e',
         'index',
-        '../../../auth/feed/singlepost.html',
+        '../../../../auctionIt/auth/feed/singlepost.html',
         './singlepost.html'
     )
 
