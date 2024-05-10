@@ -21,7 +21,12 @@ export function createCarouselItem(
 
     // Create the link wrapper for the image
     const itemLink = document.createElement('a')
-    itemLink.href = 'auctionIt/auth/feed/singlepost.html'
+    itemLink.href = checkPath(
+        'e',
+        'feed.html',
+        './singlepost.html',
+        '/auctionIt/auth/feed/singlepost.html'
+    )
     itemLink.className = 'item-linking'
 
     // Create the image element
