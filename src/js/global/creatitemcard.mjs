@@ -10,8 +10,8 @@ export function creatItemCard(img, title, bid, id) {
 
     itemLinking.href = checkPath(
         'e',
-        'index.html',
-        '/auth/feed/singlepost.html',
+        'index',
+        '../auth/feed/singlepost.html',
         './singlepost.html'
     )
 
