@@ -3,18 +3,23 @@ export function calculateTimeRemaining(endDateTime) {
     const now = new Date()
     const timeRemaining = endDate - now
 
-    if (timeRemaining > 0) {
-        const days = Math.floor(
-            timeRemaining / (1000 * 60 * 60 * 24)
-        )
-        const hours = Math.floor(
-            (timeRemaining % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-        )
-        const minutes = Math.floor(
-            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
-        )
-        return `${days}d, ${hours}h, ${minutes} m`
+    if (timeRemaining <= 0) {
+        return 'Auction ended'
     }
-    return 'Auction ended'
+
+    const timeUnits = {
+        day: 1000 * 60 * 60 * 24,
+        hour: 1000 * 60 * 60,
+        minute: 1000 * 60,
+    }
+
+    const days = Math.floor(timeRemaining / timeUnits.day)
+    const hours = Math.floor(
+        (timeRemaining % timeUnits.day) / timeUnits.hour
+    )
+    const minutes = Math.floor(
+        (timeRemaining % timeUnits.hour) / timeUnits.minute
+    )
+
+    return `${days}d, ${hours}h, ${minutes}m`
 }
