@@ -15,7 +15,8 @@ export async function getFeedItems() {
     createLoader(auctionsContainer)
     try {
         const response = await dofetch(
-            LISTING_URL + '?_seller=true&_bids=true',
+            LISTING_URL +
+                '?offset=1_seller=true&_bids=true',
             'GET',
             false
         )

@@ -17,7 +17,7 @@ export function attachEventListeners(data) {
         showMoreActions.addEventListener('click', () => {
             getItems(
                 current,
-                current + 9,
+                current + 18,
                 auctionsContainer,
                 data
             )
