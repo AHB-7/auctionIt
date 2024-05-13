@@ -3,14 +3,21 @@
 import { idReader } from '../global/idreder.mjs'
 import {
     auctionsContainer,
-    filterNewest,
+    filterAa,
+    filterHigh,
+    filterLow,
     showMoreActions,
 } from '../global/variables.mjs'
 import { getItems } from '../items/getitems.mjs'
+import {
+    sortItemsByLastBidHigh,
+    sortItemsByLastBidLow,
+    sortItemsByTitle,
+} from './sort.mjs'
 
 let attachedListeners = false
 
-let current = 18
+let current = 23
 
 export function attachEventListeners(data) {
     if (!attachedListeners) {
@@ -25,25 +32,26 @@ export function attachEventListeners(data) {
             idReader('.item-container')
         })
 
-        filterNewest.addEventListener(
-            'change',
-            function () {
-                if (this.checked) {
-                    sortItemsByTitle(data)
-                }
-                idReader('.item-container')
+        filterAa.addEventListener('change', function () {
+            if (this.checked) {
+                sortItemsByTitle(data)
             }
-        )
+            idReader('.item-container')
+        })
+
+        filterLow.addEventListener('change', function () {
+            if (this.checked) {
+                sortItemsByLastBidLow(data)
+            }
+            idReader('.item-container')
+        })
+        filterHigh.addEventListener('change', function () {
+            if (this.checked) {
+                sortItemsByLastBidHigh(data)
+            }
+            idReader('.item-container')
+        })
     }
+
     true
-}
-function sortItemsByTitle(items) {
-    items.sort((a, b) => a.title.localeCompare(b.title))
-    auctionsContainer.innerHTML = ''
-    getItems(0, current, auctionsContainer, items)
-}
-function sortItemsByPrice(items) {
-    items.sort((a, b) => a.price.localeCompare(b.price))
-    auctionsContainer.innerHTML = ''
-    getItems(0, current, auctionsContainer, items)
 }

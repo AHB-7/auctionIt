@@ -20,12 +20,21 @@ export function creatItemCard(img, title, bid, id) {
     const itemImg = document.createElement('img')
     const defaultImg =
         'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
-    itemImg.src =
-        Array.isArray(img) && img.length > 0
-            ? img[0]
-            : defaultImg
+
+    const validImageURL =
+        Array.isArray(img) &&
+        img.length > 0 &&
+        typeof img[0] === 'string' &&
+        img[0].trim() !== ''
+    itemImg.src = validImageURL ? img[0] : defaultImg
     itemImg.alt = title
     itemImg.className = 'item-img'
+    itemImg.onerror = () => {
+        if (itemImg.src !== defaultImg) {
+            itemContainer.style.display = 'none'
+        }
+    }
+
     itemLinking.appendChild(itemImg)
 
     const itemFavBtn = document.createElement('div')

@@ -11,7 +11,8 @@ import { idReader } from '../global/idreder.mjs'
 export async function getCarouselContent() {
     try {
         const response = await dofetch(
-            LISTING_URL + '/?_bids=true',
+            LISTING_URL +
+                '/?sort=endsAt&_active=true&_seller=false&_bids=true',
             'GET',
             false
         )

@@ -10,12 +10,13 @@ import { idReader } from '../global/idreder.mjs'
 export async function getLeatestAuction() {
     try {
         const response = await dofetch(
-            LISTING_URL + '/?_bids=true',
+            LISTING_URL +
+                '/?_active=true&_seller=true&_bids=true',
             'GET',
             false
         )
         leatestItemsContainer.innerHTML = ''
-        getItems(0, 3, leatestItemsContainer, response)
+        getItems(0, 4, leatestItemsContainer, response)
         idReader('.item-container')
     } catch {
         createCustomModal(

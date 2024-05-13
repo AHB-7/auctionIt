@@ -9,14 +9,13 @@ import { idReader } from '../global/idreder.mjs'
 import { attachEventListeners } from '../feedsfunction/evenets.mjs'
 import { createLoader } from '../global/loading.mjs'
 
-let current = 18
+export let current = 23
 
 export async function getFeedItems() {
     createLoader(auctionsContainer)
     try {
         const response = await dofetch(
-            LISTING_URL +
-                '?offset=1_seller=true&_bids=true',
+            LISTING_URL + '?_seller=true&_bids=true',
             'GET',
             false
         )

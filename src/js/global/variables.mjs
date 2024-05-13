@@ -83,7 +83,7 @@ export const filterNewest =
     document.getElementById('filterNewest')
 export const filterAa = document.getElementById('filterAa')
 export const filterHigh =
-    document.getElementById('filterAa')
+    document.getElementById('filterHigh')
 export const filterLow =
     document.getElementById('filterLow')
 export function checkPath(
@@ -100,3 +100,11 @@ export function checkPath(
     }
     return vriable
 }
+export const clearBtn = document.getElementById('clearBtn')
+export const agreeBtn = document.getElementById('agreeBtn')
+export const vehicles = document.getElementById('vehicles')
+export const animals = document.getElementById('animals')
+export const art = document.getElementById('art')
+
+export const artContainer =
+    document.getElementById('artContainer')

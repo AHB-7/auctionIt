@@ -13,13 +13,14 @@ export function getItems(
         i++
     ) {
         const item = auction[i]
-        if (item.bids.length > 0) {
+        if (item.bids.length > 0 && item.media) {
+            // Check if media property exists
             const latestBid =
                 item.bids[item.bids.length - 1]
 
             container.appendChild(
                 creatItemCard(
-                    item.media || '',
+                    item.media,
                     item.title,
                     latestBid.amount,
                     item.id
