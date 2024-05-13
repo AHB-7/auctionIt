@@ -4,10 +4,13 @@ import { getItems } from './getitems.mjs'
 import {
     LISTING_URL,
     auctionsContainer,
+    searchBtn,
 } from '../global/variables.mjs'
 import { idReader } from '../global/idreder.mjs'
 import { attachEventListeners } from '../feedsfunction/evenets.mjs'
 import { createLoader } from '../global/loading.mjs'
+
+const searchInput = document.getElementById('datalist')
 
 export let current = 23
 
@@ -23,11 +26,39 @@ export async function getFeedItems() {
         getItems(0, current, auctionsContainer, response)
 
         attachEventListeners(response)
-    } catch {
+        function searchEr() {
+            const searchValue =
+                searchInput.value.toLowerCase()
+            const filteredItems = response.filter(
+                (item) =>
+                    item.description
+                        .toLowerCase()
+                        .includes(searchValue) ||
+                    item.title
+                        .toLowerCase()
+                        .includes(searchValue) ||
+                    item.seller.name
+                        .toLowerCase()
+                        .includes(searchValue)
+            )
+            createLoader(auctionsContainer)
+            auctionsContainer.innerHTML = ''
+            getItems(
+                0,
+                current,
+                auctionsContainer,
+                filteredItems
+            )
+        }
+
+        // searchInput.addEventListener('keyup', searchEr)
+        searchBtn.addEventListener('click', searchEr)
+    } catch (error) {
+        console.error('Error:', error)
         createCustomModal(
             'Something went wrong',
             'text-warning',
-            'Please try reload the page or try again or try again later.',
+            'Please try reload the page or try again later.',
             'Reload Now',
             () => {
                 window.location.reload()

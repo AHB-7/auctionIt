@@ -108,3 +108,5 @@ export const art = document.getElementById('art')
 
 export const artContainer =
     document.getElementById('artContainer')
+export const searchBtn =
+    document.getElementById('searchBtn')
