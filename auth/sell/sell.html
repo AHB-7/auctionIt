@@ -2,19 +2,27 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
         <title>Home</title>
         <link
             rel="stylesheet"
             href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
-        <link rel="stylesheet" href="../../dist/css/index.css" />
-        <script type="module" src="../../src/js/index.mjs"></script>
+        <link
+            rel="stylesheet"
+            href="../../dist/css/index.css"
+        />
+        <script type="module" src="./index.js"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
             <nav class="navbar navbar-expand-sm z-3">
-                <div class="container position-relative z-3">
+                <div
+                    class="container position-relative z-3"
+                >
                     <a
                         class="navbar-toggler text-white border-0 ps-1"
                         type="button"
@@ -24,7 +32,9 @@
                         aria-expanded="true"
                         aria-label="Toggle navigation"
                     >
-                        <span class="bi bi-list fs-1"></span>
+                        <span
+                            class="bi bi-list fs-1"
+                        ></span>
                     </a>
                     <div
                         class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
@@ -33,12 +43,16 @@
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
-                                <a href="../../index.html" class="nav-link"
+                                <a
+                                    href="../../index.html"
+                                    class="nav-link"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a href="./feed.html" class="nav-link"
+                                <a
+                                    href="../feed/feed.html"
+                                    class="nav-link"
                                     >Auctions</a
                                 >
                             </li>
@@ -59,7 +73,10 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="position-absolute top-0 me-3" style="right: 0">
+                    <div
+                        class="position-absolute top-0 me-3"
+                        style="right: 0"
+                    >
                         <a
                             href="../sign/registering.html"
                             class="bi bi-box-arrow-in-right fs-4"
@@ -71,7 +88,162 @@
                 </div>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <section
+                class="bg-dark container mt-5 pt-0 pt-sm-5"
+                id="signUpFormContainer"
+            >
+                <h1 class="mb-5 col-12 text-center">
+                    Add an auction Now
+                </h1>
+                <form
+                    id="sellForm"
+                    class="needs-validation text-start row"
+                    novalidate
+                >
+                    <div class="col-12 col-md-6">
+                        <div
+                            class="row mb-3 align-items-end"
+                        >
+                            <div class="col-12">
+                                <label
+                                    for="title"
+                                    class="form-label"
+                                    >Title
+                                    <spam
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="right"
+                                        data-bs-title="This field can not be empty.
+    "
+                                        ><i
+                                            class="bi bi-info-circle text-warning-emphasis"
+                                        ></i></spam
+                                ></label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    autocomplete="username"
+                                    min="6"
+                                    required
+                                />
+                                <div
+                                    class="invalid-feedback fs-xs"
+                                >
+                                    This field can not be
+                                    empty.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 h-100">
+                                <label
+                                    for="description"
+                                    class="form-label w-100"
+                                >
+                                    Description
+                                    <span
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="right"
+                                        data-bs-title="Put a description that will help the buyer to understand the product."
+                                    >
+                                        <i
+                                            class="bi bi-info-circle text-warning-emphasis"
+                                        ></i>
+                                    </span>
+                                </label>
+                                <textarea
+                                    type="text"
+                                    style="height: 8.05rem"
+                                    class="form-control mb-3"
+                                    id="description"
+                                    required
+                                ></textarea>
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    This field can not be
+                                    empty.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label
+                                    for="auctionEndDate"
+                                    class="form-label w-100"
+                                    >Select Auction End
+                                    Date:</label
+                                >
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="auctionEndDate"
+                                    name="auctionEndDate"
+                                    required
+                                />
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    This field must be a
+                                    valid URL, or you can
+                                    leave it blank.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label
+                                    for="URL"
+                                    class="form-label"
+                                    >Image
+                                    <spam
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="right"
+                                        data-bs-title="The media mucst be a valid URL of an image."
+                                        ><i
+                                            class="bi bi-info-circle text-warning-emphasis"
+                                        ></i></spam
+                                ></label>
+                                <input
+                                    type="url"
+                                    class="form-control"
+                                    id="URL"
+                                    minlength="7"
+                                    required
+                                />
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    This field must be a
+                                    valid URL, or you can
+                                    leave it blank.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <img
+                                    src=""
+                                    class="object-fit-cover border border-1 w-100 profile"
+                                    style="height: 15rem"
+                                    id="auctionImage"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary col-12 mt-4"
+                        >
+                            Post
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </body>
 </html>
