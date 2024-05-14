@@ -8,7 +8,7 @@ import {
     url,
     defaultImageUrl,
 } from '../global/variables.mjs'
-import { getInputToArray } from './convertToArry.mjs'
+import { getInputToArray } from './converttoarry.mjs'
 import { imgDisplayed } from './sellimg.mjs'
 
 const sellForm = document.getElementById('sellForm')
