@@ -14,7 +14,6 @@ export function getItems(
     ) {
         const item = auction[i]
         if (item.bids.length > 0 && item.media) {
-            // Check if media property exists
             const latestBid =
                 item.bids[item.bids.length - 1]
 
@@ -30,19 +29,24 @@ export function getItems(
     }
 }
 export function getCarouselItems(
-    startcounter,
+    startCounter,
     counter,
     container,
     auction
 ) {
     for (
-        let i = startcounter;
-        i < auction.length && i < startcounter + counter;
+        let i = startCounter;
+        i < auction.length && i < counter;
         i++
     ) {
         const item = auction[i]
-        const isActive = i === startcounter
-        const latestBid = item.bids[item.bids.length - 1]
+        const isActive =
+            i === startCounter
+                ? 'carousel-item active'
+                : 'carousel-item'
+        const latestBid = item.bids?.[
+            item.bids.length - 1
+        ] || { amount: 0 }
         const carouselItem = createCarouselItem(
             item.media || '',
             item.title,

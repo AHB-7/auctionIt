@@ -8,8 +8,6 @@ export function createCarouselItem(
     // Create the carousel item div
     const carouselItem = document.createElement('div')
     carouselItem.className = isActive
-        ? 'carousel-item active'
-        : 'carousel-item'
 
     // Create the item container
     const itemContainer = document.createElement('div')
@@ -24,12 +22,14 @@ export function createCarouselItem(
 
     // Create the image element
     const itemImg = document.createElement('img')
-    const defaultImg =
+    const defaultImgNoImage =
         'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
+
     itemImg.src =
         Array.isArray(img) && img.length > 0
             ? img[0]
-            : defaultImg
+            : defaultImgNoImage
+
     itemImg.alt = title
     itemImg.className = 'item-img'
     itemLink.appendChild(itemImg)

@@ -1,18 +1,17 @@
 import { dofetch } from '../auth/fetch.mjs'
-import { getCarouselItems } from './getitems.mjs'
 import {
     LISTING_URL,
     carouselContainer,
 } from '../global/variables.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { idReader } from '../global/idreder.mjs'
-// import { idReader } from '../global/idreder.mjs'
+import { getCarouselItems } from './getitems.mjs'
 
 export async function getCarouselContent() {
     try {
         const response = await dofetch(
             LISTING_URL +
-                '/?sort=endsAt&_active=true&_seller=false&_bids=true',
+                '/?limit=3&offset=50&_active=true&_seller=true&_bids=true',
             'GET',
             false
         )

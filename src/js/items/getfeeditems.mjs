@@ -53,8 +53,7 @@ export async function getFeedItems() {
 
         // searchInput.addEventListener('keyup', searchEr)
         searchBtn.addEventListener('click', searchEr)
-    } catch (error) {
-        console.error('Error:', error)
+    } catch {
         createCustomModal(
             'Something went wrong',
             'text-warning',

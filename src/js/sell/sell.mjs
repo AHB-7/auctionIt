@@ -2,16 +2,18 @@ import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import {
     LISTING_URL,
-    url,
     descriptionInput,
     auctionEndDate,
     title,
+    url,
+    defaultImageUrl,
 } from '../global/variables.mjs'
 import { getInputToArray } from './convertToArry.mjs'
-import { urlPicker } from './imagesrc.mjs'
+import { imgDisplayed } from './sellimg.mjs'
 
 const sellForm = document.getElementById('sellForm')
 export function sellPost() {
+    imgDisplayed()
     sellForm.addEventListener(
         'submit',
         async function (event) {
@@ -23,6 +25,8 @@ export function sellPost() {
             }
 
             try {
+                const mediaUrl =
+                    url.value || defaultImageUrl
                 const res = await dofetch(
                     LISTING_URL,
                     'POST',
@@ -34,7 +38,7 @@ export function sellPost() {
                                 descriptionInput.value,
                             endsAt: auctionEndDate.value,
                             tags: getInputToArray(),
-                            media: urlPicker,
+                            media: [mediaUrl],
                         }),
                     }
                 )

@@ -18,7 +18,7 @@ export function creatItemCard(img, title, bid, id) {
     itemLinking.className = 'item-linking'
 
     const itemImg = document.createElement('img')
-    const defaultImg =
+    const defaultImgNoImage2 =
         'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'
 
     const validImageURL =
@@ -26,11 +26,13 @@ export function creatItemCard(img, title, bid, id) {
         img.length > 0 &&
         typeof img[0] === 'string' &&
         img[0].trim() !== ''
-    itemImg.src = validImageURL ? img[0] : defaultImg
+    itemImg.src = validImageURL
+        ? img[0]
+        : defaultImgNoImage2
     itemImg.alt = title
     itemImg.className = 'item-img'
     itemImg.onerror = () => {
-        if (itemImg.src !== defaultImg) {
+        if (itemImg.src !== defaultImgNoImage2) {
             itemContainer.style.display = 'none'
         }
     }
