@@ -10463,5 +10463,14 @@ body {
     transform: rotate(0.5turn);
   }
 }
+.profile-page-container {
+  position: absolute;
+  top: 17rem;
+  left: 0;
+}
+.profile-page-img {
+  height: 5.5rem;
+  width: 5.5rem;
+}
 
 /*# sourceMappingURL=index.css.map */
