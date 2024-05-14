@@ -3,8 +3,8 @@ export function createCustomModal(
     color,
     message,
     btntxt,
-    onDefaultButtonClick, // Callback for the default button click action
-    onCloseButtonClick, // Optional callback for close button click action
+    onDefaultButtonClick,
+    onCloseButtonClick,
     additionalButtons = []
 ) {
     // Create the outermost container div with the modal class
@@ -77,7 +77,7 @@ export function createCustomModal(
     // Add additional buttons if provided
     additionalButtons.forEach((buttonInfo) => {
         const button = document.createElement('button')
-        button.className = `btn ${buttonInfo.class}`
+        button.className = `btn ${buttonInfo.class} w-100 `
         button.textContent = buttonInfo.text
         button.onclick = () => {
             if (buttonInfo.onClick) {

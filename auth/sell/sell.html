@@ -123,7 +123,7 @@
                                     type="text"
                                     class="form-control"
                                     id="title"
-                                    autocomplete="username"
+                                    autocomplete="title"
                                     min="6"
                                     required
                                 />
@@ -155,12 +155,12 @@
                                 <textarea
                                     type="text"
                                     style="height: 8.05rem"
-                                    class="form-control mb-3"
+                                    class="form-control"
                                     id="description"
                                     required
                                 ></textarea>
                                 <div
-                                    class="invalid-feedback"
+                                    class="invalid-feedback fs-small"
                                 >
                                     This field can not be
                                     empty.
@@ -171,7 +171,7 @@
                             <div class="col-12">
                                 <label
                                     for="auctionEndDate"
-                                    class="form-label w-100"
+                                    class="form-label w-100 mt-3"
                                     >Select Auction End
                                     Date:</label
                                 >
@@ -183,11 +183,40 @@
                                     required
                                 />
                                 <div
-                                    class="invalid-feedback"
+                                    class="invalid-feedback fs-small"
                                 >
-                                    This field must be a
-                                    valid URL, or you can
-                                    leave it blank.
+                                    You must select a date
+                                    for the auction to end.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label
+                                    for="tags"
+                                    class="form-label"
+                                    >Tags
+                                    <spam
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="right"
+                                        data-bs-title="Use to make it easier to people to find your product."
+                                        ><i
+                                            class="bi bi-info-circle text-warning-emphasis"
+                                        ></i></spam
+                                ></label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="tags"
+                                    autocomplete="tags"
+                                    min="6"
+                                    required
+                                />
+                                <div
+                                    class="invalid-feedback fs-xs"
+                                >
+                                    This field can not be
+                                    empty.
                                 </div>
                             </div>
                         </div>
@@ -211,11 +240,9 @@
                                     type="url"
                                     class="form-control"
                                     id="URL"
-                                    minlength="7"
-                                    required
                                 />
                                 <div
-                                    class="invalid-feedback"
+                                    class="invalid-feedback fs-small"
                                 >
                                     This field must be a
                                     valid URL, or you can

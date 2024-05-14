@@ -1,16 +1,15 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
-import { LISTING_URL } from '../global/variables.mjs'
+import {
+    LISTING_URL,
+    url,
+    descriptionInput,
+    auctionEndDate,
+    title,
+} from '../global/variables.mjs'
+import { getInputToArray } from './convertToArry.mjs'
+import { urlPicker } from './imagesrc.mjs'
 
-const auctionImage = document.getElementById('auctionImage')
-const url = document.getElementById('URL')
-
-auctionImage.src = ''
-url.addEventListener('keyup', () => {
-    auctionImage.src = url.value
-})
-
-// )
 const sellForm = document.getElementById('sellForm')
 export function sellPost() {
     sellForm.addEventListener(
@@ -22,10 +21,6 @@ export function sellPost() {
                 sellForm.classList.add('was-validated')
                 return
             }
-            const formData = new FormData(sellForm)
-            const jsonData = Object.fromEntries(
-                formData.entries()
-            )
 
             try {
                 const res = await dofetch(
@@ -33,10 +28,38 @@ export function sellPost() {
                     'POST',
                     true,
                     {
-                        body: JSON.stringify(jsonData),
+                        body: JSON.stringify({
+                            title: title.value,
+                            description:
+                                descriptionInput.value,
+                            endsAt: auctionEndDate.value,
+                            tags: getInputToArray(),
+                            media: urlPicker,
+                        }),
                     }
                 )
-                if (!res) {
+                if (res) {
+                    createCustomModal(
+                        'Confirmation',
+                        'text-success',
+                        'Your item has been successfully listed!',
+                        'Browse more items',
+                        () => {
+                            window.location.href =
+                                '/auth/feed/feed.html'
+                        },
+                        '',
+                        [
+                            {
+                                text: 'Add a new item',
+                                class: 'btn-primary',
+                                onClick: () => {
+                                    window.location.reload()
+                                },
+                            },
+                        ]
+                    )
+                } else if (!res) {
                     createCustomModal(
                         'Some information is missing or invalid',
                         'text-danger',

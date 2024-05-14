@@ -110,3 +110,15 @@ export const artContainer =
     document.getElementById('artContainer')
 export const searchBtn =
     document.getElementById('searchBtn')
+
+export const url = document.getElementById('URL')
+
+export const auctionImage =
+    document.getElementById('auctionImage')
+export const title = document.getElementById('title')
+export const auctionEndDate = document.getElementById(
+    'auctionEndDate'
+)
+export const descriptionInput =
+    document.getElementById('description')
+export const tags = document.getElementById('tags')
