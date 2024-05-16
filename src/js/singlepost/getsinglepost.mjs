@@ -1,4 +1,5 @@
 import { dofetch } from '../auth/fetch.mjs'
+import { createCustomModal } from '../global/alertmessage.mjs'
 import { createSinglePost } from '../global/creatsinglepost.mjs'
 import { getId } from '../global/localstorage.mjs'
 import {
@@ -13,7 +14,6 @@ export async function getSingleItem() {
             'GET',
             false
         )
-        console.log(response)
 
         const bids =
             response.bids.length > 0
@@ -42,5 +42,14 @@ export async function getSingleItem() {
         )
     } catch (err) {
         console.error('Error fetching item details:', err)
+        createCustomModal(
+            'Something went wrong',
+            'text-warning',
+            'Please try reload the page or try again later.',
+            'Reload Now',
+            () => {
+                window.location.reload()
+            }
+        )
     }
 }

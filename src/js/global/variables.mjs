@@ -86,20 +86,7 @@ export const filterHigh =
     document.getElementById('filterHigh')
 export const filterLow =
     document.getElementById('filterLow')
-export function checkPath(
-    vriable,
-    include,
-    firstoption,
-    secondoption
-) {
-    vriable = ''
-    if (window.location.pathname.includes(include)) {
-        vriable = firstoption
-    } else {
-        vriable = secondoption
-    }
-    return vriable
-}
+
 export const clearBtn = document.getElementById('clearBtn')
 export const agreeBtn = document.getElementById('agreeBtn')
 export const vehicles = document.getElementById('vehicles')

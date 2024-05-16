@@ -8,12 +8,12 @@ export function createProfileHeader(
     // First main div
     const mainDiv = document.createElement('div')
     mainDiv.className =
-        'shadow col-12 col-md-6 row m-0 p-2 '
+        'shadow col row m-0 p-2 border border-top-0 border-start-0 border-end-0 border-bottom-1 border-primary '
 
     // Left column
     const leftCol = document.createElement('div')
     leftCol.className =
-        'd-flex align-items-end gap-2 justify-content-center flex-row col'
+        'd-flex align-items-end gap-2 justify-content-center flex-row col-auto'
 
     const imgContainer = document.createElement('div')
     const profileImg = document.createElement('img')

@@ -1,5 +1,3 @@
-import { checkPath } from './variables.mjs'
-
 export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
@@ -8,12 +6,7 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemLinking = document.createElement('a')
 
-    itemLinking.href = checkPath(
-        'e',
-        'feed.html',
-        './singlepost.html',
-        '/auctionIt/auth/feed/singlepost.html'
-    )
+    itemLinking.href = `/auth/feed/singlepost.html?id=${id}`
 
     itemLinking.className = 'item-linking'
 
