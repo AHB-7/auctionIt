@@ -81,17 +81,55 @@
                 </div>
             </nav>
         </header>
-        <main class="container p-0">
+        <main class="container p-0" id="profileMain">
             <section
                 class="container mt-sm-5 pt-sm-2 pt-0 mt-4 d-inline-flex flex-wrap"
                 id="headerContainer"
-            ></section>
-            <section class="container">
-                <div
-                    class="d-flex justify-content-center flex-wrap"
-                    id="userauctionContainer"
-                ></div>
+            >
+                <form
+                    id="profileForm"
+                    class="needs-validation text-start container bg-dark shadow col-11 col-md-6 position-absolute top-50 mt-5 start-50 translate-middle border border-dark p-4 rounded-3 d-none"
+                    novalidate
+                >
+                    <div class="w-100 text-end">
+                        <button
+                            type="button"
+                            id="closeButton"
+                            class="bi bi-x-square-fill link-body-emphasis text-danger btn border-0"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label
+                                for="URLavatar"
+                                class="form-label"
+                                >Avatar URL</label
+                            >
+                            <input
+                                type="url"
+                                placeholder="Add your avatar URL here..."
+                                class="form-control"
+                                id="URLavatar"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button
+                        id="changeAvatarBtn"
+                        type="submit"
+                        class="btn btn-primary col-12 mt-4"
+                    >
+                        Change
+                    </button>
+                </form>
             </section>
+            <section
+                class="container d-flex align-items-center justify-content-around flex-wrap"
+                id="profileListings"
+            ></section>
         </main>
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </body>

@@ -51,8 +51,8 @@ export async function getFeedItems() {
             )
         }
 
-        // searchInput.addEventListener('keyup', searchEr)
         searchBtn.addEventListener('click', searchEr)
+        idReader('.item-container')
     } catch {
         createCustomModal(
             'Something went wrong',
@@ -63,7 +63,5 @@ export async function getFeedItems() {
                 window.location.reload()
             }
         )
-    } finally {
-        idReader('.item-container')
     }
 }

@@ -131,3 +131,6 @@ export const headerContainer = document.getElementById(
 )
 export const signedInOrNot =
     document.getElementById('signedInOrNot')
+export const changeAvatarBtn = document.getElementById(
+    'changeAvatarBtn'
+)

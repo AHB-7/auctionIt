@@ -7,12 +7,13 @@ export function createProfileHeader(
 ) {
     // First main div
     const mainDiv = document.createElement('div')
-    mainDiv.className = 'shadow col-12 col-md-6 row m-0 p-2'
+    mainDiv.className =
+        'shadow col-12 col-md-6 row m-0 p-2 '
 
     // Left column
     const leftCol = document.createElement('div')
     leftCol.className =
-        'd-flex align-items-start justify-content-center flex-column col'
+        'd-flex align-items-end gap-2 justify-content-center flex-row col'
 
     const imgContainer = document.createElement('div')
     const profileImg = document.createElement('img')
@@ -29,7 +30,7 @@ export function createProfileHeader(
     userInfoContainer.className = 'd-flex flex-column'
 
     const userName = document.createElement('h1')
-    userName.className = 'fs-4 m-0 pt-3'
+    userName.className = 'fs-4 m-0 pt-2'
     userName.textContent = username
 
     const userEmail = document.createElement('p')
@@ -42,19 +43,23 @@ export function createProfileHeader(
 
     // Right column
     const rightCol = document.createElement('div')
+    rightCol.style =
+        'height: 5.5rem; width: 1rem; position: relative;'
     rightCol.className =
         'profile-page-container col d-flex align-items-end justify-content-between flex-column'
 
     const settingsLink = document.createElement('a')
-    settingsLink.href = '../sign/registering.html'
+    settingsLink.href = '#'
+    settingsLink.style =
+        'position: absolute; bottom: 0; right: 0.7rem;'
     const settingsIcon = document.createElement('i')
-    settingsIcon.className = 'bi bi-gear'
+    settingsIcon.className = 'bi bi-gear pt-5'
     settingsLink.appendChild(settingsIcon)
 
     const profileCardContainer =
         document.createElement('div')
     profileCardContainer.className =
-        'profile-page-crd-container mb-3 me-1'
+        'profile-page-crd-container position-absolute'
 
     const profileCardIcon = document.createElement('i')
     profileCardIcon.className =
@@ -67,12 +72,25 @@ export function createProfileHeader(
     profileCardContainer.appendChild(profileCardIcon)
     profileCardContainer.appendChild(profileCardText)
 
-    rightCol.appendChild(settingsLink)
     rightCol.appendChild(profileCardContainer)
+    rightCol.appendChild(settingsLink)
 
     mainDiv.appendChild(leftCol)
     mainDiv.appendChild(rightCol)
 
-    // Append both main divs to the container
     headerContainer.appendChild(mainDiv)
+
+    //Toggle profile form
+    settingsLink.addEventListener('click', function () {
+        const profileForm =
+            document.getElementById('profileForm')
+        profileForm.classList.remove('d-none')
+    })
+    const closeButton =
+        document.getElementById('closeButton')
+    closeButton.addEventListener('click', function () {
+        const profileForm =
+            document.getElementById('profileForm')
+        profileForm.classList.add('d-none')
+    })
 }
