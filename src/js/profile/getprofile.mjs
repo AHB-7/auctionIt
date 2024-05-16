@@ -1,7 +1,7 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { PROFILES_URL } from '../global/variables.mjs'
-// import { createProfileHeader } from './profileheader.mjs'
+import { createProfileHeader } from './profileheader.mjs'
 
 export async function getProfile() {
     try {
@@ -11,12 +11,12 @@ export async function getProfile() {
             true
         )
         console.log(r)
-        // createProfileHeader(
-        //     r.avatar,
-        //     r.name,
-        //     r.email,
-        //     r.credits
-        // )
+        createProfileHeader(
+            r.avatar,
+            r.name,
+            r.email,
+            r.credits
+        )
     } catch {
         createCustomModal(
             'You are not allowed to view this page',

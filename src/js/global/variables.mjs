@@ -129,3 +129,5 @@ export const defaultImageUrl =
 export const headerContainer = document.getElementById(
     'headerContainer'
 )
+export const signedInOrNot =
+    document.getElementById('signedInOrNot')

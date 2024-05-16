@@ -5,33 +5,56 @@ export function createProfileHeader(
     email,
     credits
 ) {
-    const imgElement = document.createElement('img')
-    imgElement.src = avatar
-    imgElement.alt = 'Background Image'
-    imgElement.className =
-        'w-100 object-fit-cover rounded-3 mt-5 opacity-75'
-    imgElement.style.height = '17rem'
+    // First main div
+    const mainDiv = document.createElement('div')
+    mainDiv.className = 'shadow col-12 col-md-6 row m-0 p-2'
 
-    const profilePageContainer =
-        document.createElement('div')
-    profilePageContainer.className =
-        'profile-page-container w-100 d-flex align-items-end pt-2'
+    // Left column
+    const leftCol = document.createElement('div')
+    leftCol.className =
+        'd-flex align-items-start justify-content-center flex-column col'
 
-    const profileInfoContainer =
-        document.createElement('div')
-    profileInfoContainer.className =
-        'd-flex align-content-start justify-content-center flex-column ms-3 ms-md-5'
-
+    const imgContainer = document.createElement('div')
     const profileImg = document.createElement('img')
     profileImg.src =
+        avatar ||
         'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
     profileImg.alt = 'profile-img Picture'
     profileImg.className = 'profile-page-img profile'
 
+    imgContainer.appendChild(profileImg)
+    leftCol.appendChild(imgContainer)
+
+    const userInfoContainer = document.createElement('div')
+    userInfoContainer.className = 'd-flex flex-column'
+
+    const userName = document.createElement('h1')
+    userName.className = 'fs-4 m-0 pt-3'
+    userName.textContent = username
+
+    const userEmail = document.createElement('p')
+    userEmail.className = 'm-0 fs-small'
+    userEmail.textContent = email
+
+    userInfoContainer.appendChild(userName)
+    userInfoContainer.appendChild(userEmail)
+    leftCol.appendChild(userInfoContainer)
+
+    // Right column
+    const rightCol = document.createElement('div')
+    rightCol.className =
+        'profile-page-container col d-flex align-items-end justify-content-between flex-column'
+
+    const settingsLink = document.createElement('a')
+    settingsLink.href = '../sign/registering.html'
+    const settingsIcon = document.createElement('i')
+    settingsIcon.className = 'bi bi-gear'
+    settingsLink.appendChild(settingsIcon)
+
     const profileCardContainer =
         document.createElement('div')
     profileCardContainer.className =
-        'profile-page-crd-container'
+        'profile-page-crd-container mb-3 me-1'
 
     const profileCardIcon = document.createElement('i')
     profileCardIcon.className =
@@ -44,38 +67,12 @@ export function createProfileHeader(
     profileCardContainer.appendChild(profileCardIcon)
     profileCardContainer.appendChild(profileCardText)
 
-    profileInfoContainer.appendChild(profileImg)
-    profileInfoContainer.appendChild(profileCardContainer)
+    rightCol.appendChild(settingsLink)
+    rightCol.appendChild(profileCardContainer)
 
-    const userInfoContainer = document.createElement('div')
-    userInfoContainer.className = 'd-flex flex-column ms-2'
+    mainDiv.appendChild(leftCol)
+    mainDiv.appendChild(rightCol)
 
-    const userName = document.createElement('h1')
-    userName.className = 'fs-4 m-0'
-    userName.textContent = username
-
-    const userEmail = document.createElement('p')
-    userEmail.className = 'm-0 fs-small'
-    userEmail.textContent = email
-
-    userInfoContainer.appendChild(userName)
-    userInfoContainer.appendChild(userEmail)
-
-    const settingsLink = document.createElement('a')
-    settingsLink.href = '../sign/registering.html'
-    settingsLink.className =
-        'ms-auto me-4 pe-0 pe-md-3 fs-5 mb-auto mt-5'
-
-    const settingsIcon = document.createElement('i')
-    settingsIcon.className = 'bi bi-gear'
-
-    settingsLink.appendChild(settingsIcon)
-
-    profilePageContainer.appendChild(profileInfoContainer)
-    profilePageContainer.appendChild(userInfoContainer)
-    profilePageContainer.appendChild(settingsLink)
-
-    headerContainer.appendChild(imgElement)
-    headerContainer.appendChild(profilePageContainer)
-    return headerContainer
+    // Append both main divs to the container
+    headerContainer.appendChild(mainDiv)
 }
