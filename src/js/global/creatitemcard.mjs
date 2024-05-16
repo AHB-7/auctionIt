@@ -6,7 +6,7 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemLinking = document.createElement('a')
 
-    itemLinking.href = `/auth/feed/singlepost.html?id=${id}`
+    itemLinking.href = `/auctionIt/auth/feed/singlepost.html?id=${id}`
 
     itemLinking.className = 'item-linking'
 

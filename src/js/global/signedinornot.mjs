@@ -4,7 +4,8 @@ import { signedInOrNot } from './variables.mjs'
 export function checkSignedInOrNot() {
     if (getAuthToken()) {
         const loginLink = document.createElement('a')
-        loginLink.href = '/auth/profile/profile.html'
+        loginLink.href =
+            '../../../auth/profile/profile.html'
         loginLink.className =
             'bi bi-person-lines-fill fs-3 text-primary'
         loginLink.setAttribute('data-bs-toggle', 'tooltip')
