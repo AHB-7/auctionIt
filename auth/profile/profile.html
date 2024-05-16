@@ -59,7 +59,7 @@
                             <li class="nav-item">
                                 <a
                                     class="nav-link"
-                                    href="../sell//sell.html"
+                                    href="../sell/sell.html"
                                     >Sell</a
                                 >
                             </li>
@@ -102,24 +102,95 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <section class="container position-relative">
-                <img
-                    src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
-                    alt="Background Image"
-                    class="w-100 object-fit-cover rounded-3 mt-5 opacity-75"
-                    style="height: 17rem"
-                />
+        <main class="container p-0">
+            <section
+                class="container mt-sm-5 pt-sm-2 pt-0 mt-4 d-inline-flex flex-wrap"
+                id="headerContainer"
+            >
                 <div
-                    class="profile-page-container w-100 d-flex align-items-end"
+                    class="shadow col-12 col-md-6 row m-0 p-2"
                 >
-                    <img
-                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                        alt="profile-img Picture"
-                        class="profile-page-img profile ms-3 ms-md-5"
-                    />
-                    <h1 class="m-0 ms-2 fs-3">User name</h1>
+                    <div
+                        class="d-flex align-items-start justify-content-center flex-column col"
+                    >
+                        <div class="">
+                            <img
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                alt="profile-img Picture"
+                                class="profile-page-img profile"
+                            />
+                        </div>
+                        <div class="d-flex flex-column">
+                            <h1 class="fs-4 m-0">
+                                User name
+                            </h1>
+                            <p class="m-0 fs-small">
+                                mail@example.no
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="profile-page-container col d-flex align-items-end justify-content-between flex-column"
+                    >
+                        <a
+                            href="../sign/registering.html"
+                            class=""
+                        >
+                            <i class="bi bi-gear"></i>
+                        </a>
+                        <div
+                            class="profile-page-crd-container"
+                        >
+                            <i
+                                class="bi bi-credit-card-2-back-fill profile-page-crd"
+                            ></i>
+                            <p class="m-0 fs-5">1001</p>
+                        </div>
+                    </div>
                 </div>
+                <div
+                    class="accordion col-12 col-md-6 ms-auto mt-md-0 mt-2"
+                    id="bioAcordion"
+                >
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button text-light fs-5 border-light"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                            >
+                                Bio
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse show"
+                            data-bs-parent="#bioAcordion"
+                        >
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet,
+                                consectetur adipisicing
+                                elit. Sapiente eaque
+                                voluptatem commodi aperiam
+                                autem consectetur sed
+                                laudantium temporibus saepe
+                                ipsam exercitationem odit
+                                magnam accusantium nobis
+                                ducimus, reprehenderit qui
+                                obcaecati ratione?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container">
+                <div
+                    class="d-flex justify-content-center flex-wrap"
+                    id="userauctionContainer"
+                ></div>
             </section>
         </main>
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

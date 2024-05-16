@@ -10463,14 +10463,36 @@ body {
     transform: rotate(0.5turn);
   }
 }
-.profile-page-container {
-  position: absolute;
-  top: 17rem;
-  left: 0;
-}
 .profile-page-img {
   height: 5.5rem;
   width: 5.5rem;
+}
+.profile-page-crd-container {
+  border-radius: 0 1rem 0 1rem;
+  border: 1px solid #f8f9fa;
+  padding: 0;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+  width: auto;
+  padding: 0.6rem 1rem;
+}
+.profile-page-crd {
+  padding: 0;
+  font-size: 1.4rem;
+  color: #00ff00;
+}
+
+.accordion-button {
+  background: none;
+  padding: 0.5rem 1rem;
+}
+.accordion-button:not(.collapse) {
+  background: none;
+  border-bottom: 0;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=index.css.map */
