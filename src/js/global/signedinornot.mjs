@@ -5,7 +5,8 @@ import { signedInOrNot } from './variables.mjs'
 export function checkSignedInOrNot() {
     if (getAuthToken()) {
         const loginLink = document.createElement('a')
-        loginLink.href = '/auth/profile/profile.html'
+        loginLink.href =
+            '/auctionIt/auth/profile/profile.html'
         loginLink.className = 'usernameReder'
         loginLink.id = getMainName()
         const profileImage = document.createElement('img')
@@ -21,7 +22,8 @@ export function checkSignedInOrNot() {
         signedInOrNot.appendChild(loginLink)
     } else {
         const loginLink = document.createElement('a')
-        loginLink.href = '/auth/sign/registering.html'
+        loginLink.href =
+            '/auctionIt/auth/sign/registering.html'
         loginLink.className =
             'bi bi-box-arrow-in-right fs-4 pt-4'
         loginLink.id = 'profileMain'
