@@ -11,6 +11,7 @@ import {
     passwordSignIn,
     signInForm,
 } from '../global/variables.mjs'
+import { getProfile } from '../profile/getprofile.mjs'
 
 // Call function to create and append the modal
 
@@ -49,8 +50,9 @@ export function signIn() {
                 addAuthToken(responseData.accessToken)
 
                 window.location.href =
-                    '/auctionIt/auth/profile/profile.html'
+                    '/auth/feed/feed.html'
             }
+            getProfile()
         } catch {
             createCustomModal(
                 'Something went wrong with the sign-in process',
