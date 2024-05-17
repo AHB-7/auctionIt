@@ -6,8 +6,11 @@ import {
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { getItems } from './getitems.mjs'
 import { idReader } from '../global/idreder.mjs'
+import { createLoader } from '../global/loading.mjs'
 
 export async function getLeatestAuction() {
+    createLoader(leatestItemsContainer)
+
     try {
         const response = await dofetch(
             LISTING_URL +

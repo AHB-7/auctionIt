@@ -1,7 +1,10 @@
 import { addAuthToken } from '../auth/authtoken.mjs'
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
-import { addMainName } from '../global/localstorage.mjs'
+import {
+    addAvatar,
+    addMainName,
+} from '../global/localstorage.mjs'
 import {
     LOGIN_URL,
     emailSignIn,
@@ -30,6 +33,8 @@ export function signIn() {
                     }),
                 }
             )
+            addMainName(responseData.name)
+            addAvatar(responseData.avatar)
             if (!responseData) {
                 createCustomModal(
                     'Invalid email or password',
@@ -42,9 +47,9 @@ export function signIn() {
                 )
             } else {
                 addAuthToken(responseData.accessToken)
+
                 window.location.href =
-                    '../../../auth/profile/profile.html'
-                addMainName(responseData.name)
+                    '/auctionIt/auth/profile/profile.html'
             }
         } catch {
             createCustomModal(

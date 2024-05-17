@@ -23,7 +23,6 @@ export function sellPost() {
                 sellForm.classList.add('was-validated')
                 return
             }
-
             try {
                 const mediaUrl =
                     url.value || defaultImageUrl
@@ -50,7 +49,7 @@ export function sellPost() {
                         'Browse more items',
                         () => {
                             window.location.href =
-                                '/auth/feed/feed.html'
+                                '/auctionIt/auth/feed/feed.html'
                         },
                         '',
                         [

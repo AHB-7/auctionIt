@@ -19,3 +19,10 @@ export const getMainName = () => {
     const itemName = localStorage.getItem('mainName')
     return itemName
 }
+export const addAvatar = (avatar) => {
+    localStorage.setItem('avatar', avatar)
+}
+export const getAvatar = () => {
+    const itemAvatar = localStorage.getItem('avatar')
+    return itemAvatar
+}

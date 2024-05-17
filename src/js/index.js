@@ -1,3 +1,4 @@
+import { nameReader } from './global/idreder.mjs'
 import { checkSignedInOrNot } from './global/signedinornot.mjs'
 import { tooltipList } from './global/variables.mjs'
 import { getCarouselContent } from './items/getcarouselcontent.mjs'
@@ -8,3 +9,4 @@ tooltipList
 getLeatestAuction()
 getCarouselContent()
 checkSignedInOrNot()
+nameReader('.usernameReder')

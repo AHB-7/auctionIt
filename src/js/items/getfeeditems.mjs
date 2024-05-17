@@ -6,7 +6,7 @@ import {
     auctionsContainer,
     searchBtn,
 } from '../global/variables.mjs'
-import { idReader } from '../global/idreder.mjs'
+import { idReader, nameReader } from '../global/idreder.mjs'
 import { attachEventListeners } from '../feedsfunction/evenets.mjs'
 import { createLoader } from '../global/loading.mjs'
 
@@ -50,7 +50,7 @@ export async function getFeedItems() {
                 filteredItems
             )
         }
-
+        nameReader('.usernameReder')
         searchBtn.addEventListener('click', searchEr)
         idReader('.item-container')
     } catch {

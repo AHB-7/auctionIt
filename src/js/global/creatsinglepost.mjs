@@ -30,10 +30,10 @@ export function createSinglePost(
 
     const img1 = document.createElement('img')
     img1.className = 'profile profile-img'
+    img1.alt = 'profile image'
     img1.src =
         profileImage ||
         'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
-    img1.alt = ''
     col1Row1.appendChild(img1)
 
     const textBox = document.createElement('div')

@@ -2,7 +2,11 @@ import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { creatItemCard } from '../global/creatitemcard.mjs'
 import { idReader } from '../global/idreder.mjs'
-import { getName } from '../global/localstorage.mjs'
+import { createLoader } from '../global/loading.mjs'
+import {
+    // getMainName,
+    getName,
+} from '../global/localstorage.mjs'
 import {
     PROFILES_URL,
     changeAvatarBtn,
@@ -10,17 +14,19 @@ import {
 import { createProfileHeader } from './profileheader.mjs'
 import { updateProfile } from './updateprofile.mjs'
 
+const allUsers = getName()
+// const logInUser = getMainName()
+// const profileMain = document.getElementById('profileMain')
+
 export async function getProfile() {
+    let nameOfUser = allUsers
+    createLoader(document.getElementById('profileListings'))
     try {
         const r = await dofetch(
-            PROFILES_URL +
-                '/' +
-                getName() +
-                '?_listings=true',
+            `${PROFILES_URL}/${nameOfUser}?_listings=true`,
             'GET',
             true
         )
-        console.log(r)
         createProfileHeader(
             r.avatar,
             r.name,
@@ -30,7 +36,6 @@ export async function getProfile() {
         const profileListings = document.getElementById(
             'profileListings'
         )
-
         function profileItems(container, auctions) {
             container.innerHTML = ''
             for (let i = 0; i < auctions.length; i++) {
@@ -44,9 +49,7 @@ export async function getProfile() {
                 container.appendChild(cardItem)
             }
         }
-
         profileItems(profileListings, r.listings)
-
         changeAvatarBtn.addEventListener('click', () =>
             updateProfile()
         )

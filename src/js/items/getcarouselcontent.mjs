@@ -6,8 +6,10 @@ import {
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { idReader } from '../global/idreder.mjs'
 import { getCarouselItems } from './getitems.mjs'
+import { createLoader } from '../global/loading.mjs'
 
 export async function getCarouselContent() {
+    createLoader(carouselContainer)
     try {
         const response = await dofetch(
             LISTING_URL +

@@ -3,6 +3,7 @@ import { createCustomModal } from '../global/alertmessage.mjs'
 import { createSinglePost } from '../global/creatsinglepost.mjs'
 import { nameReader } from '../global/idreder.mjs'
 import { getId } from '../global/localstorage.mjs'
+
 import {
     LISTING_URL,
     singleitemContainer,
@@ -75,7 +76,6 @@ export async function getSingleItem() {
                         }),
                     }
                 )
-                console.log(res)
                 if (!res) {
                     createCustomModal(
                         'The bid must be heigher than the current bid',
