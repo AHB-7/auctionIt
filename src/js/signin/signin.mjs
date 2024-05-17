@@ -1,7 +1,7 @@
 import { addAuthToken } from '../auth/authtoken.mjs'
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
-import { addName } from '../global/localstorage.mjs'
+import { addMainName } from '../global/localstorage.mjs'
 import {
     LOGIN_URL,
     emailSignIn,
@@ -44,7 +44,7 @@ export function signIn() {
                 addAuthToken(responseData.accessToken)
                 window.location.href =
                     '../../../auth/profile/profile.html'
-                addName()
+                addMainName(responseData.name)
             }
         } catch {
             createCustomModal(

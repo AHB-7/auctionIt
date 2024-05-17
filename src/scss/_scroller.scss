@@ -1,7 +1,11 @@
-// .scroll-hide::-webkit-scrollbar {
-//     display: none;
-//     scrollbar-width: none;
-// }
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+}
+.scroll-hide {
+    position: relative;
+}
+
 *::-webkit-scrollbar {
     background-color: $brand-bk-lighter;
     width: 0.5rem;

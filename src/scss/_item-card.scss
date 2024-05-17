@@ -2,7 +2,7 @@
     &-container {
         aspect-ratio: 1/1;
         width: 100%;
-        max-width: 17rem;
+        max-width: 19.3rem;
         height: 100%;
         border-radius: 0.7rem;
         position: relative;
@@ -67,7 +67,7 @@
 @media screen and (max-width: 750px) {
     .item {
         &-container {
-            width: 45%;
+            width: 43%;
         }
         &-lg-container {
             width: 100%;

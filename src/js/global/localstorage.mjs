@@ -9,6 +9,13 @@ export const addName = (name) => {
     sessionStorage.setItem('name', name)
 }
 export const getName = () => {
-    const itemId = sessionStorage.getItem('name')
-    return itemId
+    const itemName = sessionStorage.getItem('name')
+    return itemName
+}
+export const addMainName = (mainName) => {
+    localStorage.setItem('mainName', mainName)
+}
+export const getMainName = () => {
+    const itemName = localStorage.getItem('mainName')
+    return itemName
 }

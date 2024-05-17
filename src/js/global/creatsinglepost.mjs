@@ -1,4 +1,5 @@
 export function createSinglePost(
+    id,
     profileImage,
     image,
     username,
@@ -12,16 +13,19 @@ export function createSinglePost(
     // Main container section
     const section = document.createElement('section')
     section.className =
-        'container mt-md-5 mt-4 pt-md-4 mt-0'
+        'container mt-md-5 mt-4 pt-sm-4 mt-0'
+    section.id = id
 
     // First row for user profile and action icon
     const row1 = document.createElement('div')
     row1.className =
-        'row align-items-center justify-content-between mx-0'
+        'row align-items-center justify-content-between mx-0 '
     section.appendChild(row1)
 
-    const col1Row1 = document.createElement('div')
-    col1Row1.className = 'col-auto d-flex p-0'
+    const col1Row1 = document.createElement('a')
+    col1Row1.href = `/auth/profile/profile.html`
+    col1Row1.className = 'col-auto d-flex usernameReder'
+    col1Row1.id = username
     row1.appendChild(col1Row1)
 
     const img1 = document.createElement('img')
@@ -140,8 +144,9 @@ export function createSinglePost(
 
     const input = document.createElement('input')
     input.type = 'text'
+    input.id = 'amount'
     input.className = 'form-control'
-    input.placeholder = 'Write Your Bidding Information'
+    input.placeholder = 'Add a bid...'
     input.setAttribute(
         'aria-label',
         'Write Your Bidding Information'

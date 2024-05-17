@@ -16,7 +16,7 @@ export async function getLeatestAuction() {
             false
         )
         leatestItemsContainer.innerHTML = ''
-        getItems(0, 4, leatestItemsContainer, response)
+        getItems(0, 10, leatestItemsContainer, response)
         idReader('.item-container')
     } catch {
         createCustomModal(

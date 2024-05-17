@@ -2,6 +2,7 @@ import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { creatItemCard } from '../global/creatitemcard.mjs'
 import { idReader } from '../global/idreder.mjs'
+import { getName } from '../global/localstorage.mjs'
 import {
     PROFILES_URL,
     changeAvatarBtn,
@@ -12,7 +13,10 @@ import { updateProfile } from './updateprofile.mjs'
 export async function getProfile() {
     try {
         const r = await dofetch(
-            PROFILES_URL + `/AlanB?_listings=true`,
+            PROFILES_URL +
+                '/' +
+                getName() +
+                '?_listings=true',
             'GET',
             true
         )

@@ -1,6 +1,7 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { createSinglePost } from '../global/creatsinglepost.mjs'
+import { nameReader } from '../global/idreder.mjs'
 import { getId } from '../global/localstorage.mjs'
 import {
     LISTING_URL,
@@ -29,6 +30,7 @@ export async function getSingleItem() {
 
         singleitemContainer.appendChild(
             createSinglePost(
+                response.id,
                 response.seller.avatar,
                 response.media[0],
                 response.seller.name,
@@ -40,6 +42,7 @@ export async function getSingleItem() {
                 response.bids
             )
         )
+        nameReader('.usernameReder')
     } catch (err) {
         console.error('Error fetching item details:', err)
         createCustomModal(
@@ -51,5 +54,50 @@ export async function getSingleItem() {
                 window.location.reload()
             }
         )
+    } finally {
+        const bidBtn = document.getElementById('bidBtn')
+
+        bidBtn.addEventListener('click', async (event) => {
+            const amount = document.getElementById('amount')
+            try {
+                const res = await dofetch(
+                    LISTING_URL +
+                        '/' +
+                        sessionStorage.getItem('Id') +
+                        '/bids',
+                    'post',
+                    true,
+                    {
+                        body: JSON.stringify({
+                            amount: parseFloat(
+                                amount.value
+                            ),
+                        }),
+                    }
+                )
+                console.log(res)
+                if (!res) {
+                    createCustomModal(
+                        'The bid must be heigher than the current bid',
+                        'text-danger',
+                        'Please make sure you have entered a higher bid than the current bid',
+                        'Try again',
+                        () => {}
+                    )
+                } else if (res) {
+                    window.location.reload()
+                }
+            } catch {
+                createCustomModal(
+                    'Something went wrong',
+                    'text-danger',
+                    'Please try again later or try to use a different browser',
+                    'Try again',
+                    () => {
+                        window.location.reload()
+                    }
+                )
+            }
+        })
     }
 }
