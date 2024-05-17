@@ -11,7 +11,7 @@ export function accessCheck() {
             'Sign In',
             () => {
                 window.location.href =
-                    '/auth/sign/registering.html'
+                    '/auctionIt/auth/sign/registering.html'
             },
             ''
         )
