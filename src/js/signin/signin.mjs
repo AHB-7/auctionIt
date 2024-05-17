@@ -48,9 +48,15 @@ export function signIn() {
                 )
             } else {
                 addAuthToken(responseData.accessToken)
-
-                window.location.href =
-                    '/auth/feed/feed.html'
+                let currentUrl = new URL(
+                    window.location.href
+                )
+                currentUrl.pathname =
+                    currentUrl.pathname.replace(
+                        '/sign/registering.html',
+                        '/feed/feed.html'
+                    )
+                window.location.href = currentUrl.toString()
             }
             getProfile()
         } catch {
