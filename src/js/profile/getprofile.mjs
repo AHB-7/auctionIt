@@ -3,12 +3,15 @@ import { createCustomModal } from '../global/alertmessage.mjs'
 import { creatItemCard } from '../global/creatitemcard.mjs'
 import { idReader } from '../global/idreder.mjs'
 import { createLoader } from '../global/loading.mjs'
-import { getName } from '../global/localstorage.mjs'
+import { getId, getName } from '../global/localstorage.mjs'
 import {
+    LISTING_URL,
     PROFILES_URL,
     changeAvatarBtn,
 } from '../global/variables.mjs'
+import { deletConfirmation } from './eventchanger.mjs'
 import { createProfileHeader } from './profileheader.mjs'
+import { creatUpdateForm } from './updateauctionform.mjs'
 import { updateProfile } from './updateprofile.mjs'
 
 const allUsers = getName()
@@ -83,14 +86,55 @@ export async function getProfile() {
         idReader('.item-container')
         const deleteBtn =
             document.querySelectorAll('.delete-btn')
+        const editBtn =
+            document.querySelectorAll('.edit-btn')
 
-        function editAuction() {
+        function deletAuction() {
             deleteBtn.forEach((auction) => {
-                auction.addEventListener('click', () => {
-                    console.log('dsad')
+                auction.addEventListener('click', (e) => {
+                    if (e) {
+                        const itemId = getId()
+                        deletConfirmation(itemId)
+                    }
                 })
             })
         }
+        function editAuction() {
+            editBtn.forEach((auction) => {
+                auction.addEventListener(
+                    'click',
+                    async (e) => {
+                        const itemId = getId()
+                        const getR = await dofetch(
+                            `${LISTING_URL}/${itemId}`,
+                            'GET',
+                            true
+                        )
+
+                        creatUpdateForm(
+                            getR.title,
+                            getR.description,
+                            getR.tags,
+                            getR.media,
+                            async (formData) => {
+                                await dofetch(
+                                    `${LISTING_URL}/${itemId}`,
+                                    'PUT',
+                                    true,
+                                    {
+                                        body: JSON.stringify(
+                                            formData
+                                        ),
+                                    }
+                                )
+                            }
+                        )
+                    }
+                )
+            })
+        }
+
+        deletAuction()
         editAuction()
     }
 }

@@ -36,13 +36,11 @@ export function creatItemCard(img, title, bid, id) {
 
     itemLinking.appendChild(itemImg)
 
-    const itemDeletBtn = document.createElement('i')
-    itemDeletBtn.className =
-        'bi bi-trash text-light position-absolute top-0 ms-0 fs-5 btn p-0 btn-danger rounded-top-5 delete-btn'
-    itemDeletBtn.dataset.id = id
-
     const itemFavBtn = document.createElement('div')
     itemFavBtn.className = 'item-fav-btn'
+
+    const itemDeletBtn = document.createElement('i')
+    itemDeletBtn.className = 'd-none'
 
     if (
         window.location.href.includes(
@@ -50,9 +48,13 @@ export function creatItemCard(img, title, bid, id) {
         ) &&
         mainName === getUserName()
     ) {
+        itemDeletBtn.className =
+            'bi bi-trash text-light position-absolute top-0 ms-0 fs-5 btn p-0 btn-danger rounded-top-5 delete-btn'
+        itemDeletBtn.dataset.id = id
+
         const favLink = document.createElement('button')
         itemFavBtn.className =
-            'item-fav-btn w-100 text-danger rounded-0 m-0 position-relative bg-opacity-25 bg-dark'
+            'item-fav-btn w-100 text-danger rounded-0 m-0 position-relative bg-opacity-25 bg-dark edit-btn'
         favLink.className =
             'btn position-absolute top-0 end-0 edit-auction text-light p-0 bg-primary rounded-top-5'
         favLink.id = id
@@ -96,7 +98,8 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemAction = document.createElement('div')
     const itemReadMore = document.createElement('a')
-    itemReadMore.href = './singlepost.html'
+    itemReadMore.href =
+        '/auctionIt/auth/feed/singlepost.html?id=' + id
     itemReadMore.className =
         'bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-md-block'
     itemReadMore.style.width = 'fit-content'
