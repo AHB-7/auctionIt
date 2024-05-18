@@ -3,10 +3,7 @@ import { createCustomModal } from '../global/alertmessage.mjs'
 import { creatItemCard } from '../global/creatitemcard.mjs'
 import { idReader } from '../global/idreder.mjs'
 import { createLoader } from '../global/loading.mjs'
-import {
-    // getMainName,
-    getName,
-} from '../global/localstorage.mjs'
+import { getName } from '../global/localstorage.mjs'
 import {
     PROFILES_URL,
     changeAvatarBtn,
@@ -15,8 +12,7 @@ import { createProfileHeader } from './profileheader.mjs'
 import { updateProfile } from './updateprofile.mjs'
 
 const allUsers = getName()
-// const logInUser = getMainName()
-// const profileMain = document.getElementById('profileMain')
+let userName = null
 
 export async function getProfile() {
     let nameOfUser = allUsers
@@ -33,6 +29,7 @@ export async function getProfile() {
             r.email,
             r.credits
         )
+        userName = r.name
         const profileListings = document.getElementById(
             'profileListings'
         )
@@ -51,7 +48,23 @@ export async function getProfile() {
         }
         profileItems(profileListings, r.listings)
         changeAvatarBtn.addEventListener('click', () =>
-            updateProfile()
+            createCustomModal(
+                'Confirmation',
+                'text-success',
+                'Are you sure you want to change your avatar?',
+                'Go back',
+                '',
+                '',
+                [
+                    {
+                        text: 'Yes I want to change it',
+                        class: 'btn-success',
+                        onClick: () => {
+                            updateProfile()
+                        },
+                    },
+                ]
+            )
         )
     } catch (error) {
         console.error('Error fetching profile:', error)
@@ -65,7 +78,12 @@ export async function getProfile() {
                     '../sign/registering.html'
             }
         )
+        return null
     } finally {
         idReader('.item-container')
     }
+}
+
+export function getUserName() {
+    return userName
 }

@@ -22,7 +22,8 @@ export function getItems(
                     item.media,
                     item.title,
                     latestBid.amount,
-                    item.id
+                    item.id,
+                    ''
                 )
             )
         }

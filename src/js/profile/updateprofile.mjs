@@ -1,13 +1,14 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
+import { getMainName } from '../global/localstorage.mjs'
 import { PROFILES_URL } from '../global/variables.mjs'
 
 const URLavatar = document.getElementById('URLavatar')
-
+const mainName = getMainName()
 export async function updateProfile() {
     try {
         const res = await dofetch(
-            PROFILES_URL + `/AlanB/media`,
+            PROFILES_URL + `/${mainName}/media`,
             'PUT',
             true,
             {

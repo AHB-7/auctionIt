@@ -1,3 +1,7 @@
+import { getUserName } from '../profile/getprofile.mjs'
+import { getMainName } from './localstorage.mjs'
+const mainName = getMainName()
+
 export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
@@ -35,16 +39,31 @@ export function creatItemCard(img, title, bid, id) {
     const itemFavBtn = document.createElement('div')
     itemFavBtn.className = 'item-fav-btn'
 
-    const favLink = document.createElement('a')
-    favLink.href = ''
-    favLink.dataset.bsToggle = 'tooltip'
-    favLink.dataset.bsPlacement = 'left'
-    favLink.dataset.bsTitle = 'Add to your watch list'
+    if (
+        window.location.href.includes(
+            '/auth/profile/profile.html'
+        ) &&
+        mainName === getUserName()
+    ) {
+        const favLink = document.createElement('button')
+        favLink.className =
+            'btn rounded-circle p-0 edit-auction'
+        favLink.id = id
+        favLink.style.width =
+            'background-color:none; border:none;'
+        const favIcon = document.createElement('i')
+        favIcon.className = 'bi bi-three-dots-vertical fs-5'
+        favLink.appendChild(favIcon)
+        itemFavBtn.appendChild(favLink)
+    } else {
+        const favLink = document.createElement('a')
+        favLink.href = ''
 
-    const favIcon = document.createElement('i')
-    favIcon.className = 'bi fs-5 bi-plus-square'
-    favLink.appendChild(favIcon)
-    itemFavBtn.appendChild(favLink)
+        const favIcon = document.createElement('i')
+        favIcon.className = 'bi fs-5 bi-plus-square'
+        favLink.appendChild(favIcon)
+        itemFavBtn.appendChild(favLink)
+    }
 
     const itemInfo = document.createElement('div')
     itemInfo.className = 'item-info'

@@ -1,4 +1,5 @@
 import { headerContainer } from '../global/variables.mjs'
+
 export function createProfileHeader(
     avatar,
     username,
