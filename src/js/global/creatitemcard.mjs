@@ -36,6 +36,11 @@ export function creatItemCard(img, title, bid, id) {
 
     itemLinking.appendChild(itemImg)
 
+    const itemDeletBtn = document.createElement('i')
+    itemDeletBtn.className =
+        'bi bi-trash text-light position-absolute top-0 ms-0 fs-5 btn p-0 btn-danger rounded-top-5 delete-btn'
+    itemDeletBtn.dataset.id = id
+
     const itemFavBtn = document.createElement('div')
     itemFavBtn.className = 'item-fav-btn'
 
@@ -46,13 +51,14 @@ export function creatItemCard(img, title, bid, id) {
         mainName === getUserName()
     ) {
         const favLink = document.createElement('button')
+        itemFavBtn.className =
+            'item-fav-btn w-100 text-danger rounded-0 m-0 position-relative bg-opacity-25 bg-dark'
         favLink.className =
-            'btn rounded-circle p-0 edit-auction'
+            'btn position-absolute top-0 end-0 edit-auction text-light p-0 bg-primary rounded-top-5'
         favLink.id = id
-        favLink.style.width =
-            'background-color:none; border:none;'
         const favIcon = document.createElement('i')
         favIcon.className = 'bi bi-three-dots-vertical fs-5'
+
         favLink.appendChild(favIcon)
         itemFavBtn.appendChild(favLink)
     } else {
@@ -104,6 +110,7 @@ export function creatItemCard(img, title, bid, id) {
     itemContainer.appendChild(itemLinking)
     itemContainer.appendChild(itemFavBtn)
     itemContainer.appendChild(itemInfo)
+    itemContainer.appendChild(itemDeletBtn)
 
     return itemContainer
 }

@@ -81,6 +81,17 @@ export async function getProfile() {
         return null
     } finally {
         idReader('.item-container')
+        const deleteBtn =
+            document.querySelectorAll('.delete-btn')
+
+        function editAuction() {
+            deleteBtn.forEach((auction) => {
+                auction.addEventListener('click', () => {
+                    console.log('dsad')
+                })
+            })
+        }
+        editAuction()
     }
 }
 

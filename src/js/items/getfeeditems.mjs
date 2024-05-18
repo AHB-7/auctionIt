@@ -12,13 +12,14 @@ import { createLoader } from '../global/loading.mjs'
 
 const searchInput = document.getElementById('datalist')
 
-export let current = 23
+export let current = 20
 
 export async function getFeedItems() {
     createLoader(auctionsContainer)
     try {
         const response = await dofetch(
-            LISTING_URL + '?_seller=true&_bids=true',
+            LISTING_URL +
+                '?sort=created&sortOrder=desc&offset=100&_seller=true&_bids=true',
             'GET',
             false
         )
