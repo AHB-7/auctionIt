@@ -1,5 +1,14 @@
 import { isLocalhost } from './variables.mjs'
-
+/**
+ * Creates a carousel item element with the given parameters.
+ *
+ * @param {string|string[]} img - The image URL(s) for the carousel item.
+ * @param {string} title - The title of the carousel item.
+ * @param {number} bid - The bid amount for the carousel item.
+ * @param {string} id - The ID of the carousel item.
+ * @param {string} isActive - The class name to indicate if the carousel item is active.
+ * @returns {HTMLElement} The created carousel item element.
+ */
 export function createCarouselItem(
     img,
     title,
@@ -44,8 +53,7 @@ export function createCarouselItem(
     // Create the favorite button container
     const itemFavBtn = document.createElement('div')
     itemFavBtn.className = 'item-fav-btn'
-    const favLink = document.createElement('a')
-    favLink.href = ''
+    const favLink = document.createElement('spam')
     favLink.setAttribute('data-bs-toggle', 'tooltip')
     favLink.setAttribute('data-bs-placement', 'left')
     favLink.setAttribute(
@@ -53,7 +61,7 @@ export function createCarouselItem(
         'Add to your watch list'
     )
     const favIcon = document.createElement('i')
-    favIcon.className = 'bi fs-5 bi-plus-square'
+    favIcon.className = 'bi fs-5 bi-plus-square hover-me'
     favLink.appendChild(favIcon)
     itemFavBtn.appendChild(favLink)
 

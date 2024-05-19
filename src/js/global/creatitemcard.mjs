@@ -2,7 +2,15 @@ import { getUserName } from '../profile/getprofile.mjs'
 import { getMainName } from './localstorage.mjs'
 import { isLocalhost } from './variables.mjs'
 const mainName = getMainName()
-
+/**
+ * Creates an item card element with the given parameters.
+ *
+ * @param {string|string[]} img - The image URL(s) for the item card.
+ * @param {string} title - The title of the item.
+ * @param {number} bid - The bid amount for the item.
+ * @param {string} id - The ID of the item.
+ * @returns {HTMLElement} The created item card element.
+ */
 export function creatItemCard(img, title, bid, id) {
     const itemContainer = document.createElement('div')
     itemContainer.className =
@@ -11,13 +19,11 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemLinking = document.createElement('a')
 
-    let itemLinkingUrl = `/auctionIt/auth/feed/singlepost.html?id=${id}`
-
     if (isLocalhost()) {
-        itemLinkingUrl = `/auth/feed/singlepost.html?id=${id}`
+        itemLinking.href = `/auth/feed/singlepost.html?id=${id}`
+    } else {
+        itemLinking.href = `/auctionIt/auth/feed/singlepost.html?id=${id}`
     }
-
-    itemLinking.href = itemLinkingUrl
 
     itemLinking.className = 'item-linking'
 
@@ -59,7 +65,7 @@ export function creatItemCard(img, title, bid, id) {
             'bi bi-trash text-light position-absolute top-0 ms-0 fs-5 btn p-0 btn-danger rounded-top-5 delete-btn'
         itemDeletBtn.dataset.id = id
 
-        const favLink = document.createElement('button')
+        const favLink = document.createElement('spam')
         itemFavBtn.className =
             'item-fav-btn w-100 text-danger rounded-0 m-0 position-relative bg-opacity-25 bg-dark edit-btn'
         favLink.className =
@@ -71,7 +77,7 @@ export function creatItemCard(img, title, bid, id) {
         favLink.appendChild(favIcon)
         itemFavBtn.appendChild(favLink)
     } else {
-        const favLink = document.createElement('a')
+        const favLink = document.createElement('spam')
         favLink.href = ''
 
         const favIcon = document.createElement('i')
@@ -106,7 +112,11 @@ export function creatItemCard(img, title, bid, id) {
     const itemAction = document.createElement('div')
     const itemReadMore = document.createElement('a')
 
-    itemReadMore.href = itemLinkingUrl
+    if (isLocalhost()) {
+        itemReadMore.href = `/auth/feed/singlepost.html?id=${id}`
+    } else {
+        itemReadMore.href = `/auctionIt/auth/feed/singlepost.html?id=${id}`
+    }
     itemReadMore.className =
         'bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-md-block'
     itemReadMore.style.width = 'fit-content'

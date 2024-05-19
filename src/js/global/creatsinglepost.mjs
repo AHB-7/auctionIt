@@ -1,5 +1,20 @@
 import { isLocalhost } from './variables.mjs'
 
+/**
+ * Creates a single post element with the given parameters.
+ *
+ * @param {string} id - The ID of the post.
+ * @param {string} profileImage - The URL of the profile image.
+ * @param {string} image - The URL of the post image.
+ * @param {string} username - The username of the post creator.
+ * @param {string} title - The title of the post.
+ * @param {number} price - The price of the post.
+ * @param {string} creationDate - The creation date of the post.
+ * @param {string} endDate - The end date of the post.
+ * @param {string} description - The description of the post.
+ * @param {Array} allBids - An array of bids related to the post.
+ * @returns {HTMLElement} The created single post element.
+ */
 export function createSinglePost(
     id,
     profileImage,

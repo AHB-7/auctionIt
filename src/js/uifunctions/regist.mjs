@@ -5,14 +5,19 @@ import {
     signUpFormContainer,
 } from '../global/variables.mjs'
 
-// this function is used to toggle between the sign in and sign up forms
+/**
+ * Toggles between the sign-in and sign-up forms when the respective buttons are clicked.
+ */
 
+// Add event listener to the sign-in button to show the sign-in form and hide the sign-up form
 signInBtn.addEventListener('click', function () {
     if (signInFormContainer.classList.contains('d-none')) {
         signInFormContainer.classList.remove('d-none')
         signUpFormContainer.classList.add('d-none')
     }
 })
+
+// Add event listener to the sign-up button to show the sign-up form and hide the sign-in form
 signUpBtn.addEventListener('click', function () {
     if (signUpFormContainer.classList.contains('d-none')) {
         signUpFormContainer.classList.remove('d-none')
@@ -20,22 +25,25 @@ signUpBtn.addEventListener('click', function () {
     }
 })
 
-// This JavaScript function targets all forms with the class 'needs-validation'.
-//It listens for form submissions and checks if each form is valid.
-//If a form is invalid, it prevents the default submission behavior and stops event propagation.
-//Finally, it adds the 'was-validated' class to the form, which visually indicates to the user that validation has occurred.
+/**
+ * Adds validation to forms with the 'needs-validation' class. Prevents form submission if validation fails.
+ */
 
+// Select all forms with the 'needs-validation' class
 const forms = document.querySelectorAll('.needs-validation')
 
+// Add event listener to each form to validate on submit
 Array.from(forms).forEach((form) => {
     form.addEventListener(
         'submit',
         (event) => {
+            // Prevent form submission if validation fails
             if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
             }
 
+            // Add 'was-validated' class to the form
             form.classList.add('was-validated')
         },
         false

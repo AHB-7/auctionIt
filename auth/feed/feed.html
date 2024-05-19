@@ -6,7 +6,21 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <title>Home</title>
+        <meta
+            name="description"
+            content="Find and bid on the best feeds at our auction page. Great deals and high-quality feeds available for your needs."
+        />
+        <meta
+            name="keywords"
+            content="feed auction, buy feed, bid on feed, feed deals, feed marketplace"
+        />
+        <meta name="author" content="AuctionIt" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+
+        <title>Auctions</title>
         <link
             rel="stylesheet"
             href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
@@ -23,9 +37,9 @@
                 <div
                     class="container position-relative z-3"
                 >
-                    <a
+                    <span
                         class="navbar-toggler text-white border-0 ps-1"
-                        type="button"
+                        role="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
                         aria-controls="navbarNav"
@@ -35,7 +49,7 @@
                         <span
                             class="bi bi-list fs-1"
                         ></span>
-                    </a>
+                    </span>
                     <div
                         class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
                         style="left: 0"
@@ -130,17 +144,17 @@
                         class="btn-check"
                         name="options-outlined"
                         id="filter"
-                        autocomplete="off"
                     />
                     <label
-                        class="btn btn-outline-primary position-relative"
+                        class="btn btn-outline-light position-relative"
                         for="filter"
                         data-bs-toggle="tooltip"
                         data-bs-placement="left"
                         data-bs-title="Click here to filter the auctions..."
                         >Filter</label
                     >
-                    <div
+
+                    <fieldset
                         class="position-absolute top-100 bg-dark w-100 filter-container d-none py-3 px-3 z-3"
                         style="left: 0"
                     >
@@ -204,23 +218,22 @@
                                 Agree
                             </button>
                         </div>
-                    </div>
+                    </fieldset>
                     <input
                         type="checkbox"
                         class="btn-check"
                         name="options-outlined"
                         id="sort"
-                        autocomplete="off"
                     />
                     <label
-                        class="btn btn-outline-primary rounded-end-2"
+                        class="btn btn-outline-light rounded-end-2"
                         for="sort"
                         data-bs-toggle="tooltip"
                         data-bs-placement="right"
                         data-bs-title="Click here to choose the sorting method..."
                         >Sort</label
                     >
-                    <div
+                    <fieldset
                         class="position-absolute top-100 bg-dark w-100 sort-container d-none py-3 px-3 z-3"
                         style="left: 0"
                     >
@@ -288,7 +301,7 @@
                                 Active auctions
                             </label>
                         </div>
-                    </div>
+                    </fieldset>
                 </div>
             </section>
             <section class="container">

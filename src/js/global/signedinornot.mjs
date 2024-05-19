@@ -31,9 +31,9 @@ export function checkSignedInOrNot() {
         loginLink.appendChild(profileImage)
         containerDiv.appendChild(loginLink)
 
-        const signOutButton =
-            document.createElement('button')
-        signOutButton.className = 'btn text-danger p-0'
+        const signOutButton = document.createElement('a')
+        signOutButton.className =
+            'fs-3 text-danger p-0 hvoer-me'
         signOutButton.innerHTML =
             '<i class="bi bi-door-closed fs-3"></i>'
 

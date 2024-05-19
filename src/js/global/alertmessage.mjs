@@ -1,3 +1,15 @@
+/**
+ * Creates and displays a custom modal dialog with specified options.
+ *
+ * @param {string} title - The title of the modal.
+ * @param {string} color - The color class for the modal title.
+ * @param {string} message - The message to display in the modal body.
+ * @param {string} btntxt - The text for the default button.
+ * @param {Function} onDefaultButtonClick - The callback function to execute when the default button is clicked.
+ * @param {Function} onCloseButtonClick - The callback function to execute when the close button is clicked.
+ * @param {Array} [additionalButtons=[]] - An array of additional button objects, each with 'text', 'class', and 'onClick' properties.
+ */
+
 export function createCustomModal(
     title,
     color,

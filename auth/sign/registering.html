@@ -2,30 +2,55 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+
+        <meta
+            name="keywords"
+            content="Here can you sell your items online where people can see you and buy from you"
+        />
+        <meta name="author" content="AuctionIt" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="description"
+            content="Welcome back Login to start biding and having fun with us."
+        />
+
+        <title>Sign In</title>
         <link
             rel="stylesheet"
             href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
         />
-        <link rel="stylesheet" href="../../dist/css/index.css" />
+        <link
+            rel="stylesheet"
+            href="../../dist/css/index.css"
+        />
         <script type="module" src="./index.js"></script>
     </head>
     <body data-bs-theme="dark">
         <header>
             <nav class="navbar navbar-expand-sm z-3">
-                <div class="container position-relative z-3">
-                    <a
+                <div
+                    class="container position-relative z-3"
+                >
+                    <span
                         class="navbar-toggler text-white border-0 ps-1"
-                        type="button"
+                        role="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
                         aria-controls="navbarNav"
                         aria-expanded="true"
                         aria-label="Toggle navigation"
                     >
-                        <span class="bi bi-list fs-1"></span>
-                    </a>
+                        <span
+                            class="bi bi-list fs-1"
+                        ></span>
+                    </span>
                     <div
                         class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
                         style="left: 0"
@@ -33,17 +58,23 @@
                     >
                         <ul class="navbar-nav ms-sm-0 ms-3">
                             <li class="nav-item">
-                                <a href="../../index.html" class="nav-link"
+                                <a
+                                    href="../../index.html"
+                                    class="nav-link"
                                     >Home</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a href="../feed/feed.html" class="nav-link"
+                                <a
+                                    href="../feed/feed.html"
+                                    class="nav-link"
                                     >Auctions</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../sell/sell.html"
+                                <a
+                                    class="nav-link"
+                                    href="../sell/sell.html"
                                     >Sell</a
                                 >
                             </li>
@@ -57,7 +88,10 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="position-absolute top-0 me-3" style="right: 0">
+                    <div
+                        class="position-absolute top-0 me-3"
+                        style="right: 0"
+                    >
                         <a
                             href="./registering.html"
                             class="bi bi-box-arrow-in-right fs-4 text-pbrand"
@@ -74,13 +108,15 @@
                 class="container my-5 text-center"
                 style="width: 100%; max-width: 25rem"
             >
-                <div class="btn-group w-100 my-5" role="group">
+                <div
+                    class="btn-group w-100 my-5"
+                    role="group"
+                >
                     <input
                         type="radio"
                         class="btn-check form-check-input"
                         name="options-outlined"
                         id="signInBtn"
-                        autocomplete="off"
                         checked
                     />
                     <label
@@ -101,16 +137,18 @@
                         >
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <label for="email" class="form-label w-100"
+                                    <label
+                                        for="email"
+                                        class="form-label w-100"
                                         >Email
-                                        <spam
+                                        <span
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
                                             data-bs-title="The email address must include @norff.no or @stud.noroff.no"
                                             ><i
                                                 class="bi bi-info-circle text-warning-emphasis"
                                             ></i
-                                        ></spam>
+                                        ></span>
                                     </label>
                                     <input
                                         type="email"
@@ -121,33 +159,40 @@
                                         placeholder="yourname@noroff.no"
                                         required
                                     />
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email.
+                                    <div
+                                        class="invalid-feedback"
+                                    >
+                                        Please enter a valid
+                                        email.
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <label for="password-2" class="form-label"
+                                    <label
+                                        for="password-2"
+                                        class="form-label"
                                         >Password
-                                        <spam
+                                        <span
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
                                             data-bs-title="The password must include at leat 1 capital letter and one sgnel like '. - ! ?'"
                                             ><i
                                                 class="bi bi-info-circle text-warning-emphasis"
-                                            ></i></spam
+                                            ></i></span
                                     ></label>
                                     <input
                                         type="password"
                                         class="form-control"
                                         id="password-2"
                                         minlength="8"
-                                        autocomplete="current-password"
                                         required
                                     />
-                                    <div class="invalid-feedback">
-                                        The password must be at least 8
+                                    <div
+                                        class="invalid-feedback"
+                                    >
+                                        The password must be
+                                        at least 8
                                         characters.
                                     </div>
                                 </div>
@@ -165,7 +210,6 @@
                         class="btn-check form-check-input"
                         name="options-outlined"
                         id="signUpBtn"
-                        autocomplete="off"
                     />
                     <label
                         class="btn btn-outline-primary rounded-end-2"
@@ -183,28 +227,35 @@
                             class="needs-validation text-start"
                             novalidate
                         >
-                            <div class="row mb-3 align-items-end">
+                            <div
+                                class="row mb-3 align-items-end"
+                            >
                                 <div class="col-12">
-                                    <label for="username" class="form-label"
+                                    <label
+                                        for="username"
+                                        class="form-label"
                                         >Username
-                                        <spam
+                                        <span
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
-                                            data-bs-title="The username Name can only use a-Z, 0-9, and _"
+                                            data-bs-title="The username Name can only use a-Z, 0-9, and _, and at least 6 letters"
                                             ><i
                                                 class="bi bi-info-circle text-warning-emphasis"
-                                            ></i></spam
+                                            ></i></span
                                     ></label>
                                     <input
                                         type="text"
                                         class="form-control"
                                         id="username"
                                         autocomplete="username"
-                                        min="6"
+                                        minlength="6"
                                         required
                                     />
-                                    <div class="invalid-feedback fs-xs">
-                                        Please enter a valid username.
+                                    <div
+                                        class="invalid-feedback fs-xs"
+                                    >
+                                        Please enter a valid
+                                        username.
                                     </div>
                                 </div>
                             </div>
@@ -232,33 +283,40 @@
                                         id="email-2"
                                         required
                                     />
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email.
+                                    <div
+                                        class="invalid-feedback"
+                                    >
+                                        Please enter a valid
+                                        email.
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <label for="password" class="form-label"
+                                    <label
+                                        for="password"
+                                        class="form-label"
                                         >Password
-                                        <spam
+                                        <span
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="right"
                                             data-bs-title="The password must include at leat 1 capital letter and one sgnel like '. - ! ?'"
                                             ><i
                                                 class="bi bi-info-circle text-warning-emphasis"
-                                            ></i></spam
+                                            ></i></span
                                     ></label>
                                     <input
                                         type="password"
                                         class="form-control"
                                         id="password"
                                         minlength="8"
-                                        autocomplete="current-password"
                                         required
                                     />
-                                    <div class="invalid-feedback">
-                                        The password must be at least 8
+                                    <div
+                                        class="invalid-feedback"
+                                    >
+                                        The password must be
+                                        at least 8
                                         characters.
                                     </div>
                                 </div>

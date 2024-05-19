@@ -10,7 +10,7 @@ import {
     isLocalhost,
 } from '../global/variables.mjs'
 import { getInputToArray } from './converttoarry.mjs'
-import { imgDisplayed } from './sellimg.mjs'
+import { imgDisplayed } from './imgdisplayed.mjs'
 
 const sellForm = document.getElementById('sellForm')
 export function sellPost() {

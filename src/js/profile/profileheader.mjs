@@ -50,12 +50,12 @@ export function createProfileHeader(
     rightCol.className =
         'profile-page-container col d-flex align-items-end justify-content-between flex-column'
 
-    const settingsLink = document.createElement('a')
-    settingsLink.href = '#'
+    const settingsLink = document.createElement('spam')
+    settingsLink.className = 'hvoer-me'
     settingsLink.style =
         'position: absolute; bottom: 0; right: 0.7rem;'
     const settingsIcon = document.createElement('i')
-    settingsIcon.className = 'bi bi-gear pt-5'
+    settingsIcon.className = 'bi bi-gear pt-5  '
     settingsLink.appendChild(settingsIcon)
 
     const profileCardContainer =

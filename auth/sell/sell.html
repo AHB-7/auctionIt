@@ -6,7 +6,22 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <title>Home</title>
+
+        <meta
+            name="keywords"
+            content="Here can you sell your items online where people can see you and buy from you"
+        />
+        <meta name="author" content="AuctionIt" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="description"
+            content="Here can you sell your items online where people can see you and buy from you."
+        />
+
+        <title>Add an Auction</title>
         <link
             rel="stylesheet"
             href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
@@ -23,9 +38,9 @@
                 <div
                     class="container position-relative z-3"
                 >
-                    <a
+                    <span
                         class="navbar-toggler text-white border-0 ps-1"
-                        type="button"
+                        role="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
                         aria-controls="navbarNav"
@@ -35,7 +50,7 @@
                         <span
                             class="bi bi-list fs-1"
                         ></span>
-                    </a>
+                    </span>
                     <div
                         class="collapse navbar-collapse position-absolute top-0 bg-brand-bk mp-2 w-100 mt-5 mt-sm-0"
                         style="left: 0"
@@ -103,21 +118,20 @@
                                     for="title"
                                     class="form-label"
                                     >Title
-                                    <spam
+                                    <span
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="right"
                                         data-bs-title="This field can not be empty.
     "
                                         ><i
                                             class="bi bi-info-circle text-warning-emphasis"
-                                        ></i></spam
+                                        ></i></span
                                 ></label>
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="title"
-                                    autocomplete="title"
-                                    min="6"
+                                    minlength="6"
                                     required
                                 />
                                 <div
@@ -146,7 +160,6 @@
                                     </span>
                                 </label>
                                 <textarea
-                                    type="text"
                                     style="height: 8.05rem"
                                     class="form-control"
                                     id="description"
@@ -189,19 +202,18 @@
                                     for="tags"
                                     class="form-label"
                                     >Tags
-                                    <spam
+                                    <span
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="right"
                                         data-bs-title="Use to make it easier to people to find your product."
                                         ><i
                                             class="bi bi-info-circle text-warning-emphasis"
-                                        ></i></spam
+                                        ></i></span
                                 ></label>
                                 <input
                                     type="text"
                                     class="form-control"
                                     id="tags"
-                                    autocomplete="tag"
                                 />
                                 <div
                                     class="invalid-feedback fs-xs"
@@ -219,13 +231,13 @@
                                     for="URL"
                                     class="form-label"
                                     >Image
-                                    <spam
+                                    <span
                                         data-bs-toggle="tooltip"
                                         data-bs-placement="right"
                                         data-bs-title="The media mucst be a valid URL of an image."
                                         ><i
                                             class="bi bi-info-circle text-warning-emphasis"
-                                        ></i></spam
+                                        ></i></span
                                 ></label>
                                 <input
                                     type="url"
@@ -244,7 +256,7 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <img
-                                    src=""
+                                    src="https://static.vecteezy.com/system/resources/previews/004/141/669/large_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
                                     class="object-fit-cover border border-1 w-100 profile"
                                     style="height: 15rem"
                                     id="auctionImage"
