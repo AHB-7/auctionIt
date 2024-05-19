@@ -54,25 +54,30 @@ export async function getProfile() {
             }
         }
         profileItems(profileListings, r.listings)
-        changeAvatarBtn.addEventListener('click', () =>
-            createCustomModal(
-                'Confirmation',
-                'text-success',
-                'Are you sure you want to change your avatar?',
-                'Go back',
-                '',
-                '',
-                [
-                    {
-                        text: 'Yes I want to change it',
-                        class: 'btn-success',
-                        onClick: () => {
-                            updateProfile()
-                            addAvatar(URLavatar.value)
+
+        changeAvatarBtn.addEventListener(
+            'click',
+            (event) => {
+                event.preventDefault()
+                createCustomModal(
+                    'Confirmation',
+                    'text-success',
+                    'Are you sure you want to change your avatar?',
+                    'Go back',
+                    '',
+                    '',
+                    [
+                        {
+                            text: 'Yes I want to change it',
+                            class: 'btn-success',
+                            onClick: () => {
+                                updateProfile()
+                                addAvatar(URLavatar.value)
+                            },
                         },
-                    },
-                ]
-            )
+                    ]
+                )
+            }
         )
         nameReader('.usernameReder')
     } catch (error) {

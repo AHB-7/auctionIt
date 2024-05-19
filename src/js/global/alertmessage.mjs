@@ -81,7 +81,7 @@ export function createCustomModal(
         if (onDefaultButtonClick) {
             onDefaultButtonClick()
         }
-        modal.remove() // Remove modal from DOM
+        // modal.remove() // Remove modal from DOM
     }
     modalFooter.appendChild(tryAgainButton)
 
@@ -94,7 +94,7 @@ export function createCustomModal(
             if (buttonInfo.onClick) {
                 buttonInfo.onClick()
             }
-            modal.remove() // Optional: Remove modal from DOM after action
+            // modal.remove() // Optional: Remove modal from DOM after action
         }
         modalFooter.appendChild(button)
     })
