@@ -22,7 +22,8 @@ export function createProfileHeader(
         avatar ||
         'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
     profileImg.alt = 'profile-img Picture'
-    profileImg.className = 'profile-page-img profile'
+    profileImg.className =
+        'profile-page-img profile object-fit-cover'
 
     imgContainer.appendChild(profileImg)
     leftCol.appendChild(imgContainer)

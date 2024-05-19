@@ -19,11 +19,12 @@ export function sellPost() {
         'submit',
         async function (event) {
             event.preventDefault()
-            event.preventDefault()
+
             if (!sellForm.checkValidity()) {
                 sellForm.classList.add('was-validated')
                 return
             }
+
             try {
                 const mediaUrl =
                     url.value || defaultImageUrl
@@ -42,7 +43,8 @@ export function sellPost() {
                         }),
                     }
                 )
-                if (res) {
+
+                if (res && !res.error) {
                     createCustomModal(
                         'Confirmation',
                         'text-success',
@@ -52,9 +54,10 @@ export function sellPost() {
                             if (isLocalhost()) {
                                 window.location.href =
                                     '/auth/feed/feed.html'
-                            } else
+                            } else {
                                 window.location.href =
                                     '/auctionIt/auth/feed/feed.html'
+                            }
                         },
                         '',
                         [
@@ -67,13 +70,14 @@ export function sellPost() {
                             },
                         ]
                     )
-                } else if (!res) {
+                } else if (res.error) {
+                    const errorMessage = res.error.errors
+                        ? res.error.errors[0].message
+                        : res.error.message
                     createCustomModal(
                         'Some information is missing or invalid',
                         'text-danger',
-                        `Please make sure you have entered correct information     
-
-                         NB: The date cannot be in the past or more than a year in the future`,
+                        errorMessage,
                         'Try again',
                         () => {
                             window.location.reload()
@@ -82,7 +86,7 @@ export function sellPost() {
                 } else {
                     console.log('Response:', res)
                 }
-            } catch {
+            } catch (error) {
                 createCustomModal(
                     'Something went wrong with the sign-in process',
                     'text-danger',

@@ -36,7 +36,7 @@ export function createSinglePost(
     row1.appendChild(col1Row1)
 
     const img1 = document.createElement('img')
-    img1.className = 'profile profile-img'
+    img1.className = 'profile profile-img object-fit-cover'
     img1.alt = 'profile image'
     img1.src =
         profileImage ||
@@ -74,7 +74,7 @@ export function createSinglePost(
     itemImage.className = 'ratio ratio-1x1 mt-4 h-100'
 
     const img2 = document.createElement('img')
-    img2.className = 'h-100 profile object-fit-cover '
+    img2.className = 'h-100 profile object-fit-cover'
     img2.src =
         image ||
         'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'

@@ -10,9 +10,9 @@ export async function dofetch(
         const headers = {
             'Content-type': 'application/json',
         }
-        if (isAuth === true) {
-            const authToke = getAuthToken()
-            headers['Authorization'] = `Bearer ${authToke}`
+        if (isAuth) {
+            const authToken = getAuthToken()
+            headers['Authorization'] = `Bearer ${authToken}`
         }
         const combinedOptions = {
             headers,
@@ -20,15 +20,21 @@ export async function dofetch(
             ...options,
         }
         const response = await fetch(url, combinedOptions)
+        const data = await response.json()
         if (!response.ok) {
-            const errorDetails = await response.text()
-            throw new Error(
-                `HTTP error ${response.status}: ${errorDetails}`
-            )
+            return {
+                error: data,
+                status: response.status,
+                statusText: response.statusText,
+            }
         }
-        const json = await response.json()
-        return json
+        return data
     } catch (error) {
         console.error(error)
+        return {
+            error: { message: 'Network error' },
+            status: 0,
+            statusText: 'Network error',
+        }
     }
 }

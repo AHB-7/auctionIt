@@ -9,7 +9,7 @@ export function createCustomModal(
 ) {
     // Create the outermost container div with the modal class
     const modal = document.createElement('div')
-    modal.className = 'modal'
+    modal.className = 'modal fade show'
     modal.tabIndex = -1
     modal.style.display = 'block'
     modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
@@ -32,8 +32,7 @@ export function createCustomModal(
 
     // Create the title of the modal
     const modalTitle = document.createElement('h5')
-    modalTitle.className = 'modal-title'
-    modalTitle.className = color
+    modalTitle.className = `modal-title ${color}`
     modalTitle.textContent = title
     modalHeader.appendChild(modalTitle)
 
@@ -77,7 +76,7 @@ export function createCustomModal(
     // Add additional buttons if provided
     additionalButtons.forEach((buttonInfo) => {
         const button = document.createElement('button')
-        button.className = `btn ${buttonInfo.class} w-100 `
+        button.className = `btn ${buttonInfo.class} w-100`
         button.textContent = buttonInfo.text
         button.onclick = () => {
             if (buttonInfo.onClick) {

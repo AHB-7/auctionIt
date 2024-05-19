@@ -76,24 +76,28 @@ export async function getSingleItem() {
                         }),
                     }
                 )
-                if (!res.ok) {
+
+                if (res.error) {
+                    const errorMessage = res.error.errors
+                        ? res.error.errors[0].message
+                        : res.error.message
                     createCustomModal(
-                        `${errorDetails}`,
+                        'Something went wrong',
                         'text-danger',
-                        'Please make sure you have entered a higher bid than the current bid',
+                        errorMessage,
                         'Try again',
                         () => {}
                     )
-                } else if (res) {
+                } else {
                     window.location.reload()
                 }
             } catch {
                 createCustomModal(
-                    `something went wrong`,
+                    'Something went wrong',
                     'text-danger',
                     'The auction is either closed or the bid is too low. Please check the end date and try again.',
                     'Try again',
-                    ''
+                    () => {}
                 )
             }
         })
