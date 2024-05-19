@@ -1,3 +1,5 @@
+import { isLocalhost } from './variables.mjs'
+
 export function createSinglePost(
     id,
     profileImage,
@@ -23,7 +25,12 @@ export function createSinglePost(
     section.appendChild(row1)
 
     const col1Row1 = document.createElement('a')
-    col1Row1.href = `/auctionIt/auth/profile/profile.html`
+    let profileLinkingUrl = `/auctionIt/auth/profile/profile.html`
+
+    if (isLocalhost()) {
+        profileLinkingUrl = `/auth/profile/profile.html`
+    }
+    col1Row1.href = profileLinkingUrl
     col1Row1.className = 'col-auto d-flex usernameReder'
     col1Row1.id = username
     row1.appendChild(col1Row1)

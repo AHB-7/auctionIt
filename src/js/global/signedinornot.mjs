@@ -1,6 +1,6 @@
 import { getAuthToken } from '../auth/authtoken.mjs'
 import { getAvatar, getMainName } from './localstorage.mjs'
-import { signedInOrNot } from './variables.mjs'
+import { isLocalhost, signedInOrNot } from './variables.mjs'
 
 export function checkSignedInOrNot() {
     if (getAuthToken()) {
@@ -8,8 +8,13 @@ export function checkSignedInOrNot() {
         containerDiv.className = 'btn-group'
 
         const loginLink = document.createElement('a')
-        loginLink.href =
+        let profileImageLink =
             '/auctionIt/auth/profile/profile.html'
+        if (isLocalhost()) {
+            profileImageLink = '/auth/profile/profile.html'
+        }
+        loginLink.href = profileImageLink
+
         loginLink.className = 'usernameReder'
         loginLink.id = getMainName()
 
@@ -40,17 +45,25 @@ export function checkSignedInOrNot() {
             'click',
             function (event) {
                 event.preventDefault()
-
-                window.location.href =
+                let singInAgainLink =
                     '/auctionIt/auth/sign/registering.html'
+                if (isLocalhost()) {
+                    singInAgainLink =
+                        '/auth/sign/registering.html'
+                }
+                window.location.href = singInAgainLink
                 localStorage.clear()
                 sessionStorage.clear()
             }
         )
     } else {
         const loginLink = document.createElement('a')
-        loginLink.href =
+        let singInAgainLink =
             '/auctionIt/auth/sign/registering.html'
+        if (isLocalhost()) {
+            singInAgainLink = '/auth/sign/registering.html'
+        }
+        loginLink.href = singInAgainLink
         loginLink.className =
             'bi bi-box-arrow-in-right fs-4 pt-4'
         loginLink.id = 'profileMain'

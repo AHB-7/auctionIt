@@ -7,6 +7,7 @@ import {
     title,
     url,
     defaultImageUrl,
+    isLocalhost,
 } from '../global/variables.mjs'
 import { getInputToArray } from './converttoarry.mjs'
 import { imgDisplayed } from './sellimg.mjs'
@@ -48,8 +49,12 @@ export function sellPost() {
                         'Your item has been successfully listed!',
                         'Browse more items',
                         () => {
-                            window.location.href =
-                                '/auctionIt/auth/feed/feed.html'
+                            if (isLocalhost()) {
+                                window.location.href =
+                                    '/auth/feed/feed.html'
+                            } else
+                                window.location.href =
+                                    '/auctionIt/auth/feed/feed.html'
                         },
                         '',
                         [

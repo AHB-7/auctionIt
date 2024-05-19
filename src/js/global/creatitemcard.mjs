@@ -1,5 +1,6 @@
 import { getUserName } from '../profile/getprofile.mjs'
 import { getMainName } from './localstorage.mjs'
+import { isLocalhost } from './variables.mjs'
 const mainName = getMainName()
 
 export function creatItemCard(img, title, bid, id) {
@@ -10,7 +11,13 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemLinking = document.createElement('a')
 
-    itemLinking.href = `/auctionIt/auth/feed/singlepost.html?id=${id}`
+    let itemLinkingUrl = `/auctionIt/auth/feed/singlepost.html?id=${id}`
+
+    if (isLocalhost()) {
+        itemLinkingUrl = `/auth/feed/singlepost.html?id=${id}`
+    }
+
+    itemLinking.href = itemLinkingUrl
 
     itemLinking.className = 'item-linking'
 
@@ -98,8 +105,8 @@ export function creatItemCard(img, title, bid, id) {
 
     const itemAction = document.createElement('div')
     const itemReadMore = document.createElement('a')
-    itemReadMore.href =
-        '/auctionIt/auth/feed/singlepost.html?id=' + id
+
+    itemReadMore.href = itemLinkingUrl
     itemReadMore.className =
         'bg-pbrand fs-small py-1 px-3 rounded-1 shadow-dark mx-auto d-none d-md-block'
     itemReadMore.style.width = 'fit-content'

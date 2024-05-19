@@ -123,3 +123,14 @@ export const signedInOrNot =
 export const changeAvatarBtn = document.getElementById(
     'changeAvatarBtn'
 )
+export function isLocalhost() {
+    const hostname = window.location.hostname
+    return (
+        hostname === 'localhost' ||
+        hostname === '127.0.0.1' ||
+        hostname === '' || 
+        hostname.startsWith('192.168.') || 
+        hostname.startsWith('10.') || 
+        hostname.endsWith('.local')
+    )
+}
