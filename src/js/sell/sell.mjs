@@ -86,7 +86,7 @@ export function sellPost() {
                 } else {
                     console.log('Response:', res)
                 }
-            } catch (error) {
+            } catch {
                 createCustomModal(
                     'Something went wrong with the sign-in process',
                     'text-danger',
