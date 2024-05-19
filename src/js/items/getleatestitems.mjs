@@ -14,7 +14,7 @@ export async function getLeatestAuction() {
     try {
         const response = await dofetch(
             LISTING_URL +
-                '/?_active=true&_seller=true&_bids=true',
+                '?sort=created&sortOrder=desc&_seller=true&_bids=true',
             'GET',
             false
         )

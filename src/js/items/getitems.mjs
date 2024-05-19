@@ -7,28 +7,40 @@ export function getItems(
     container,
     auction
 ) {
+    const endcounter = startcounter + counter 
+
     for (
         let i = startcounter;
-        i < auction.length && i < counter;
+        i < auction.length && i < endcounter;
         i++
     ) {
         const item = auction[i]
-        if (item.bids.length > 0 && item.media) {
+        let latestBidAmount = 'No Bids'
+
+        if (item.bids.length >= 1) {
             const latestBid =
                 item.bids[item.bids.length - 1]
+            latestBidAmount = latestBid.amount
+        }
 
-            container.appendChild(
-                creatItemCard(
-                    item.media,
-                    item.title,
-                    latestBid.amount,
-                    item.id,
-                    ''
-                )
+        const itemCard = creatItemCard(
+            item.media,
+            item.title,
+            latestBidAmount,
+            item.id,
+            ''
+        )
+
+        if (itemCard) {
+            container.appendChild(itemCard)
+        } else {
+            console.error(
+                `Failed to create item card for item with id: ${item.id}`
             )
         }
     }
 }
+
 export function getCarouselItems(
     startCounter,
     counter,

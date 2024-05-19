@@ -1,9 +1,13 @@
 import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { creatItemCard } from '../global/creatitemcard.mjs'
-import { idReader } from '../global/idreder.mjs'
+import { idReader, nameReader } from '../global/idreder.mjs'
 import { createLoader } from '../global/loading.mjs'
-import { getId, getName } from '../global/localstorage.mjs'
+import {
+    addAvatar,
+    getId,
+    getName,
+} from '../global/localstorage.mjs'
 import {
     LISTING_URL,
     PROFILES_URL,
@@ -64,11 +68,13 @@ export async function getProfile() {
                         class: 'btn-success',
                         onClick: () => {
                             updateProfile()
+                            addAvatar(URLavatar.value)
                         },
                     },
                 ]
             )
         )
+        nameReader('.usernameReder')
     } catch (error) {
         console.error('Error fetching profile:', error)
         createCustomModal(
@@ -127,6 +133,7 @@ export async function getProfile() {
                                         ),
                                     }
                                 )
+                                window.location.reload()
                             }
                         )
                     }

@@ -109,8 +109,24 @@ export function createSinglePost(
 
     const endDatee = document.createElement('p')
     endDatee.className = 'fs-small m-0 lh-1'
-    endDatee.innerHTML = `Ends: <strong>${endDate}</strong>`
     creationDateRow.appendChild(endDatee)
+
+    function isDateInPast(endDate) {
+        const end = new Date(endDate)
+
+        const currentDate = new Date()
+
+        return end < currentDate
+    }
+
+    if (isDateInPast(endDate)) {
+        endDatee.innerHTML = `The auction ended at <strong>${endDate}</strong>`
+        endDatee.className = 'fs-small m-0 lh-1 text-danger'
+    } else {
+        endDatee.innerHTML = `Ends: <strong>${endDate}</strong>`
+        endDatee.className =
+            'fs-small m-0 lh-1 text-success'
+    }
 
     const col2Row2 = document.createElement('div')
     col2Row2.className = 'col-md-6 col-12 mt-3 p-0 '

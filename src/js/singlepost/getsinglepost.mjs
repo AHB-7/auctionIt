@@ -76,9 +76,9 @@ export async function getSingleItem() {
                         }),
                     }
                 )
-                if (!res) {
+                if (!res.ok) {
                     createCustomModal(
-                        'The bid must be heigher than the current bid',
+                        `${errorDetails}`,
                         'text-danger',
                         'Please make sure you have entered a higher bid than the current bid',
                         'Try again',
@@ -89,13 +89,11 @@ export async function getSingleItem() {
                 }
             } catch {
                 createCustomModal(
-                    'Something went wrong',
+                    `something went wrong`,
                     'text-danger',
-                    'Please try again later or try to use a different browser',
+                    'The auction is either closed or the bid is too low. Please check the end date and try again.',
                     'Try again',
-                    () => {
-                        window.location.reload()
-                    }
+                    ''
                 )
             }
         })

@@ -40,11 +40,7 @@ export function editConfirmation(e) {
             {
                 text: 'Yes Please Delete',
                 class: 'btn-danger',
-                onClick: () => {
-                    // .then(() => {
-                    //     window.location.reload()
-                    // })
-                },
+                onClick: () => {},
             },
         ]
     )

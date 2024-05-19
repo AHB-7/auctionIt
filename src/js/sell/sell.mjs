@@ -66,7 +66,9 @@ export function sellPost() {
                     createCustomModal(
                         'Some information is missing or invalid',
                         'text-danger',
-                        'Please make sure you have entered correct information',
+                        `Please make sure you have entered correct information     
+
+                         NB: The date cannot be in the past or more than a year in the future`,
                         'Try again',
                         () => {
                             window.location.reload()

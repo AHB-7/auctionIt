@@ -13,7 +13,7 @@ export async function getCarouselContent() {
     try {
         const response = await dofetch(
             LISTING_URL +
-                '/?limit=3&offset=50&_active=true&_seller=true&_bids=true',
+                '/?limit=3&_active=true&_seller=true&_bids=true&sort=endsAt&sortOrder=asc',
             'GET',
             false
         )

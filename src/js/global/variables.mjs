@@ -86,6 +86,8 @@ export const filterHigh =
     document.getElementById('filterHigh')
 export const filterLow =
     document.getElementById('filterLow')
+export const filteractive =
+    document.getElementById('active')
 
 export const clearBtn = document.getElementById('clearBtn')
 export const agreeBtn = document.getElementById('agreeBtn')

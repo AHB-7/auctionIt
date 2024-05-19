@@ -2,7 +2,6 @@ import { dofetch } from '../auth/fetch.mjs'
 import { createCustomModal } from '../global/alertmessage.mjs'
 import { getItems } from './getitems.mjs'
 import {
-    LISTING_URL,
     auctionsContainer,
     searchBtn,
 } from '../global/variables.mjs'
@@ -12,29 +11,22 @@ import { createLoader } from '../global/loading.mjs'
 
 const searchInput = document.getElementById('datalist')
 
-export let current = 20
+export let current = 23
 
-export async function getFeedItems() {
+export async function getFeedItems(URL) {
     createLoader(auctionsContainer)
     try {
-        const response = await dofetch(
-            LISTING_URL +
-                '?sort=created&sortOrder=desc&offset=100&_seller=true&_bids=true',
-            'GET',
-            false
-        )
+        const response = await dofetch(URL, 'GET', false)
         auctionsContainer.innerHTML = ''
         getItems(0, current, auctionsContainer, response)
 
         attachEventListeners(response)
         function searchEr() {
+            createLoader(auctionsContainer)
             const searchValue =
                 searchInput.value.toLowerCase()
             const filteredItems = response.filter(
                 (item) =>
-                    item.description
-                        .toLowerCase()
-                        .includes(searchValue) ||
                     item.title
                         .toLowerCase()
                         .includes(searchValue) ||
@@ -42,11 +34,10 @@ export async function getFeedItems() {
                         .toLowerCase()
                         .includes(searchValue)
             )
-            createLoader(auctionsContainer)
             auctionsContainer.innerHTML = ''
             getItems(
                 0,
-                current,
+                100,
                 auctionsContainer,
                 filteredItems
             )

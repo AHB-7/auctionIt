@@ -1,25 +1,52 @@
 import { getAuthToken } from '../auth/authtoken.mjs'
-import { addAvatar, getMainName } from './localstorage.mjs'
+import { getAvatar, getMainName } from './localstorage.mjs'
 import { signedInOrNot } from './variables.mjs'
 
 export function checkSignedInOrNot() {
     if (getAuthToken()) {
+        const containerDiv = document.createElement('div')
+        containerDiv.className = 'btn-group'
+
         const loginLink = document.createElement('a')
         loginLink.href =
             '/auctionIt/auth/profile/profile.html'
         loginLink.className = 'usernameReder'
         loginLink.id = getMainName()
+
         const profileImage = document.createElement('img')
         profileImage.className = 'profile profile-img'
-        const checkAvatar =
-            addAvatar('avatar') != URL
-                ? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
-                : addAvatar('avatar')
-        profileImage.src = checkAvatar
+        profileImage.src =
+            getAvatar() ||
+            'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
         profileImage.alt = 'profile image'
+        profileImage.style.width = '2.4rem'
+        profileImage.style.height = '2.4rem'
 
         loginLink.appendChild(profileImage)
-        signedInOrNot.appendChild(loginLink)
+        containerDiv.appendChild(loginLink)
+
+        const signOutButton =
+            document.createElement('button')
+        signOutButton.className = 'btn text-danger p-0'
+        signOutButton.innerHTML =
+            '<i class="bi bi-door-closed fs-3"></i>'
+
+        containerDiv.appendChild(signOutButton)
+        document
+            .getElementById('signedInOrNot')
+            .appendChild(containerDiv)
+
+        signOutButton.addEventListener(
+            'click',
+            function (event) {
+                event.preventDefault()
+
+                window.location.href =
+                    '/auctionIt/auth/sign/registering.html'
+                localStorage.clear()
+                sessionStorage.clear()
+            }
+        )
     } else {
         const loginLink = document.createElement('a')
         loginLink.href =
